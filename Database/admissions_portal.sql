@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th3 09, 2022 lúc 04:05 AM
+-- Thời gian đã tạo: Th3 09, 2022 lúc 04:18 AM
 -- Phiên bản máy phục vụ: 10.4.21-MariaDB
 -- Phiên bản PHP: 8.0.10
 
@@ -60,7 +60,7 @@ CREATE TABLE `users` (
   `Email` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `PhoneNumber` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
   `Types` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'Thành viên',
-  `Status` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'Đang hoạt động'
+  `Status` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'Hoạt động'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
