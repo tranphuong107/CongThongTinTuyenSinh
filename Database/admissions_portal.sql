@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th3 08, 2022 lúc 04:18 AM
+-- Thời gian đã tạo: Th3 09, 2022 lúc 04:05 AM
 -- Phiên bản máy phục vụ: 10.4.21-MariaDB
 -- Phiên bản PHP: 8.0.10
 
@@ -29,7 +29,8 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `posts` (
   `PostID` int(10) UNSIGNED NOT NULL,
-  `Title` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `Category` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `Title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `Content` longtext COLLATE utf8_unicode_ci NOT NULL,
   `CreatedAt` date NOT NULL,
   `Image` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -40,8 +41,10 @@ CREATE TABLE `posts` (
 -- Đang đổ dữ liệu cho bảng `posts`
 --
 
-INSERT INTO `posts` (`PostID`, `Title`, `Content`, `CreatedAt`, `Image`, `UserID`) VALUES
-(1, 'Chiến lược phát triển Trường Đại học Thuỷ Lợi giai đoạn 2016 – 2020 tầm nhìn 2030', 'I. Sứ mệnh, tầm nhìn, giá trị cốt lõi, triết lý giáo dục:\r\n\r\n1. Sứ mệnh:\r\n\r\n Trường Đại học Thuỷ lợi là trường đại học công lập có sứ mệnh đào tạo nguồn nhân lực chất lượng cao, nghiên cứu khoa học, phát triển và chuyển giao công nghệ tiên tiến trong các ngành khoa học, kỹ thuật, kinh tế và quản lý, đặc biệt trong lĩnh vực thuỷ lợi, môi trường, phòng chống và giảm nhẹ thiên tai; góp phần thúc đẩy nhanh quá trình công nghiệp hoá, hiện đại hoá và phát triển bền vững Tổ quốc Việt Nam.', '2022-01-19', ' ', 1);
+INSERT INTO `posts` (`PostID`, `Category`, `Title`, `Content`, `CreatedAt`, `Image`, `UserID`) VALUES
+(1, 'Giới thiệu', 'Chiến lược phát triển Trường Đại học Thuỷ Lợi giai đoạn 2016 – 2020 tầm nhìn 2030', 'I. Sứ mệnh, tầm nhìn, giá trị cốt lõi, triết lý giáo dục:\r\n\r\n1. Sứ mệnh:\r\n\r\n Trường Đại học Thuỷ lợi là trường đại học công lập có sứ mệnh đào tạo nguồn nhân lực chất lượng cao, nghiên cứu khoa học, phát triển và chuyển giao công nghệ tiên tiến trong các ngành khoa học, kỹ thuật, kinh tế và quản lý, đặc biệt trong lĩnh vực thuỷ lợi, môi trường, phòng chống và giảm nhẹ thiên tai; góp phần thúc đẩy nhanh quá trình công nghiệp hoá, hiện đại hoá và phát triển bền vững Tổ quốc Việt Nam.', '2022-01-19', ' 1', 1),
+(2, 'Thông tin tuyển sinh', 'Các ngành tuyển sinh đại học chính quy năm 2020', 'Năm 2020, Trường Đại học Thủy lợi tuyển sinh 23 ngành và nhóm ngành, trong đó có 2 ngành Chương trình tiên tiến giảng dạy bằng Tiếng Anh. Trường tuyển sinh tại 3 cơ sở với tổng chỉ tiêu là 3700.', '2022-01-22', '2', 1),
+(3, 'Ngành đào tạo', 'Logistics và Quản lý chuỗi cung ứng', 'MÃ TRƯỜNG ĐẠI HỌC Thủy Lợi: TLA112\r\nMÃ NGÀNH: 7510605\r\nCHỈ TIÊU: 90\r\nHỌC PHÍ TRUNG BÌNH MỖI KỲ: ~5 triệu\r\n4 MÃ TỔ HỢP MÔN XÉT TUYỂN:\r\nToán, Vật lý, Hóa học (A00)\r\nToán, Vật lý, Tiếng Anh (A01)\r\nToán, Ngữ văn, Tiếng Anh (D01)\r\nToán, Ngữ văn, KHXH (C15)', '2022-01-10', '3', 1);
 
 -- --------------------------------------------------------
 
@@ -92,7 +95,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT cho bảng `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `PostID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `PostID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT cho bảng `users`
