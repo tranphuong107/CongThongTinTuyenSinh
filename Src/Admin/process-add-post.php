@@ -4,7 +4,7 @@
     {
     $category =$_POST['txt-category'];
     $title =$_POST['txt-title'];
-    $content = mysqli_real_escape_string($conn, $_POST['txt-content']);
+    $content = $_POST['txt-content'];
     $createdAt =$_POST['txt-date'];
     $image =$_POST['txt-image'];
     $userID =$_POST['txt-userid'];

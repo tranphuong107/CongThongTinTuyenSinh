@@ -9,12 +9,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../Css/style.css">
-    <!--scrip hiện ảnh-->
+    <!--script hiện ảnh-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <!-- Summernote CSS - CDN Link -->
-    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
-    <!-- //Summernote CSS - CDN Link -->
+    
     <script>
         function chooseFile(fileInput) {
             if(fileInput.files && fileInput.files[0]){//kiểm tra xem đã chọn file chưa
@@ -38,6 +35,9 @@
     .content a{
         text-decoration: none;
         color: black;
+    }
+    .noidung{
+        width: 90%;
     }
 </style>
     <div class="content border border-dark"  >
@@ -79,21 +79,21 @@
                         <div class="row py-1">
                             <div class="mb-3 col-7 ">
                                 <label class=" me-4 "for="cars">Danh mục: </label>
-                                <select class ="p-2 border border-dark rounded-3 "name="txt-category" id="category">
-                                <option value="">Giới thiệu</option>
-                                <option value="">Thông tin tuyển sinh</option>
-                                <option value="">Ngành đào tạo</option>
+                                <select class ="p-2 border border-dark rounded-3 " name="txt-category" id="category">
+                                <option value="Giới thiệu">Giới thiệu</option>
+                                <option value="Thông tin tuyển sinh">Thông tin tuyển sinh</option>
+                                <option value="Ngành đào tạo">Ngành đào tạo</option>
                                 </select>
                             </div>
                             <div class="col-5">
                             <img src="" alt="" id="image" style = "width:200px; height:150px;">
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="mb-3 col-7 ">
-                                <div class="mb-3 ">
+                        <div class="row ">
+                            <div class="mb-3 col-7  ">
+                                <div class="mb-3 noidung">
                                     <label for="" class="form-label" >Nội dung:</label>
-                                    <input type="" class="form-control border border-dark" style="height:150px; width:80%;" id="summernote" name ="txt-content" >
+                                    <textarea type="" class="form-control border border-dark " style="height:150px; width:70%;" id="content-ckeditor" name ="txt-content" ></textarea>
                                 
                                 </div>
                             </div>
@@ -101,8 +101,8 @@
                                 <div class = "mb-3">
                                     <div class = "">Thời gian:</div>
                                     <div class = "pt-2" style = "">
-                                        <input type="date" class = "form-control border border-dark" style = "width:87%;"> 
-                                        <div class = "pt-1 pb-1" style = "float:right; padding-right:50px;" name ="txt-date">(Ngày/Tháng/Năm)</div>
+                                        <input type="date" class = "form-control border border-dark" style = "width:87%;"  name ="txt-date"> 
+                                        <div class = "pt-1 pb-1" style = "float:right; padding-right:50px;">(Ngày/Tháng/Năm)</div>
                                     </div>
                             </div>
                                 <div class="mb-3 py-2">
@@ -136,18 +136,13 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src = "js/myjs.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cropper/1.0.1/jquery-cropper.js" integrity="sha512-7H4tikIFoyAdYD31w/uNYvvAUL6gyunWXLwTQ7ZXkyjD+brw+PfJpLxFkANnbkKnSJzU89YpnF3fJKbpvV+QYg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <!-- Summernote JS - CDN Link -->
-    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
-        <script>
-            $(document).ready(function() {
-                $('#summernote').summernote({
-                    placeholder: 'Nhập nội dung bài viết',
-                    width : 520,
-                    height: 100
-                });
-                $('.dropdown-toggle').dropdown();
-            });
-        </script>
-        <!-- //Summernote JS - CDN Link -->
+    <script src="../ckeditor/ckeditor.js"></script>
+    <script>
+        ClassicEditor
+        .create(document.querySelector('#content-ckeditor'))
+        .catch(error => {
+            console.error(error)
+        });
+    </script>
 </body>
 </html>
