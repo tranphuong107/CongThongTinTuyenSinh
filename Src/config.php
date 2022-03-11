@@ -3,7 +3,7 @@
         define('HOST','localhost');
         define('USER','root');
         const PASS  = '';
-        const DB    = 'Admissions_Portal'; 
+        const DB    = 'admissions_portal'; 
         $conn = mysqli_connect(HOST,USER, PASS,DB);
         if(!$conn){
             die('Không thể kết nối');
