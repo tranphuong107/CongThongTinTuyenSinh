@@ -7,7 +7,7 @@
     $content = $_POST['txt-content'];
     $image =$_POST['txt-image'];
     $userID =$_POST['txt-userid'];
-    if(!empty($title)|| !empty($content)){
+    if(!empty($title) && !empty($content) && !empty($userID)){
         $sql = "INSERT INTO posts(Category, Title, Content , Image, UserID)
                 VALUES ('$category','$title','$content','$image','$userID')";
         //bước 3: result là số bản ghi chèn thành công
@@ -15,7 +15,7 @@
         //kiểm tra lệnh sql 
         //echo $sql;
         if($result>0){
-            header ("location:index.php");
+            header ("location:mng-article.php");
         }else{
             echo 'có lỗi xảy ra!';
         }
