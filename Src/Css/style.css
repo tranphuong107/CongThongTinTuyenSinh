@@ -83,4 +83,27 @@
     align-items: center;
     color: #f1f1f1;
 }
+/* css của phương */
+.breadcrumb-item + .breadcrumb-item::before         {
+    color:black;
+}
+.content a{
+    text-decoration: none;
+    color: black;
+}
+.noidung{
+    width: 90%;
+}
+.breadcrumb-item :hover{
+font-weight: bold;
+}
+.btn :hover{
+    background-color: white;
+    color:#2e86de;
+}
+.content{
+    position: fixed;
+}
+
+/* kết thúc css của phương */
 

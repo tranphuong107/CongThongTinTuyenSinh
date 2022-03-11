@@ -1,9 +1,8 @@
-
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Đăng nhập</title>
-	<link rel="stylesheet" href="Src/css/style1.css">
+	<link rel="stylesheet" href="../css/style1.css">
 </head>
 <body>
     <div class="login">
