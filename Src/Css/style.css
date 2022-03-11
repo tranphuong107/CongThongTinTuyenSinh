@@ -83,4 +83,23 @@
     align-items: center;
     color: #f1f1f1;
 }
+/*đăng nhâp*/
+/*đăng nhâp*/
+.login{
+    border: 1px solid grey;
+    border-radius: 10px;
+    text-align: center;
+    background-color: rgb(193, 202, 202);
+    width: 30%;
+    margin: 10% auto;
+    padding: 2%;
+    margin-bottom: 10px;
+}
 
+.form-control{
+    width:80%;
+    margin-left: 300px;
+}
+.col-form-label{
+    margin-left: 300px;
+}
