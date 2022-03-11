@@ -39,6 +39,13 @@
     .noidung{
         width: 90%;
     }
+    .breadcrumb-item :hover{
+    font-weight: bold;
+    }
+    .btn :hover{
+        background-color: white;
+        color:#2e86de;
+    }
 </style>
     <div class="content border border-dark"  >
         <div class="row float-end col-md-8 my-2 mt-3 py-2 me-2  mx-auto" style="background-color:#ffffff; width:80%;" >
@@ -47,7 +54,7 @@
                         <nav aria-label="breadcrumb"  >
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item ">
-                                    <a href="#">
+                                    <a href="index.php">
                                         <span class="my-text ">Trang chủ</span>
                                     </a></li>
                                 <li class="breadcrumb-item  ">
@@ -55,7 +62,7 @@
                                         <span class="my-text ">Quản lý bài viết</span>
                                     </a></li>
                                 <li class="breadcrumb-item active ">
-                                    <a href="#">
+                                    <a href="add-post.php">
                                         <span class="my-text ">Thêm bài viết</span>
                                     </a></li>
                             </ol>
@@ -98,13 +105,6 @@
                                 </div>
                             </div>
                             <div class="mb-3 col-5">
-                                <div class = "mb-3">
-                                    <div class = "">Thời gian:</div>
-                                    <div class = "pt-2" style = "">
-                                        <input type="date" class = "form-control border border-dark" style = "width:87%;"  name ="txt-date"> 
-                                        <div class = "pt-1 pb-1" style = "float:right; padding-right:50px;">(Ngày/Tháng/Năm)</div>
-                                    </div>
-                            </div>
                                 <div class="mb-3 py-2">
                                     <label for="" class="form-label">Người tạo</label>
                                     <input type="text" class="form-control border border-dark" style="width:87%;" id="" name ="txt-userid">
@@ -116,8 +116,8 @@
                         <div></div>
                         <div class="col-6"></div>
                             <div class="col-6 d-flex justify-content-center ">
-                            <button type="submit" class="btn text-white px-5 fs-6  " style="background-color:#2e86de; margin-left:80px;" name ="btnadd">Lưu</button>
-                            <button type="submit" class="btn text-white px-5 fs-6 mx-5" style="background-color:#2e86de;" name ="btncancel">Hủy</button>
+                            <button type="submit" class="btn  text-white px-5 fs-6  " style="background-color:#2e86de; margin-left:80px;" name ="btnadd">Lưu</button>
+                            <a href="#" class="btn  text-white px-5 fs-6 mx-5" style="background-color:#2e86de;" name ="btncancel">Hủy</a>
                             </div>
                             </div>
                     </form>
