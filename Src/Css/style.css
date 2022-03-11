@@ -96,7 +96,7 @@
     color: #f1f1f1;
 }
 /* css của phương */
-.breadcrumb-item + .breadcrumb-item::before         {
+.breadcrumb-item + .breadcrumb-item::before {
     color:black;
 }
 .content a{
@@ -106,16 +106,17 @@
 .noidung{
     width: 90%;
 }
-.breadcrumb-item :hover{
-font-weight: bold;
+.breadcrumb-item:hover{
+    color:#2e86de;
 }
 .btn :hover{
     background-color: white;
     color:#2e86de;
 }
-.content{
+/* .content{
     position: fixed;
-}
+    margin-left: 200px;
+} */
 
 /* kết thúc css của phương */
 
