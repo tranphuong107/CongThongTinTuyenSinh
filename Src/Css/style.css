@@ -1,0 +1,10 @@
+.left-column {
+    width: 70%;
+    height: 150px;
+    background: #ddd;
+}
+.right-column {
+    width: 30%;
+    height: 150px;
+    background: #959595;
+}
