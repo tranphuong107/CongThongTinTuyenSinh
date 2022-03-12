@@ -1,0 +1,144 @@
+
+.left-column {
+    width: 70%;
+    height: 150px;
+    background: #ddd;
+}
+.right-column {
+    width: 30%;
+    height: 150px;
+    background: #959595;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+  
+}
+/* body{
+    position: relative;
+} */
+
+.wrapper{
+    overflow: hidden;
+}
+
+/* Side Bar */
+.sidebar{
+    position: fixed;
+    left: 0;
+    width: 250px;
+    height: 80%;
+}
+
+.sidebar ul {
+    padding-left: 0 !important;
+}
+
+
+
+.sidebar ul a{
+    display: block;
+    height: 100%;
+    width:100%;
+    line-height: 65px;
+    font-size: 20px;
+    color: white;
+    /* padding-left: 40px; */
+    text-align: center;
+    box-sizing: border-box;
+    border-top: 1px solid rgba(255, 255, 255, .1);
+    border-bottom: 1px solid black;
+    text-decoration: none;
+
+}
+
+
+/* Content */
+.wrapper-content{
+    width: 100%;
+    padding-left: 250px;
+    color: cadetblue;
+   
+}
+
+/* Header-content */
+.header-content{
+    background-color: antiquewhite;
+    height: 67px;
+   display: flex;
+   align-items: center;
+   box-shadow: 0px 1px #b8c5ca;
+}
+.header-content-tilte{
+    margin-left: 20px ;
+}
+
+
+
+.main-content{
+    display: flex;
+    justify-content: center;
+    margin: 20% ;
+    
+}
+
+.main-content-item{
+    width: 200px;
+    height: 200px;
+    background-color: cadetblue;
+    margin-right: 100px;
+    margin-left: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #f1f1f1;
+}
+/* css của phương */
+.breadcrumb-item + .breadcrumb-item::before {
+    color:black;
+}
+.content a{
+    text-decoration: none;
+    color: black;
+}
+.noidung{
+    width: 90%;
+}
+.breadcrumb-item:hover{
+    color:#2e86de;
+}
+.btn :hover{
+    background-color: white;
+    color:#2e86de;
+}
+.my-text {
+    text-decoration: none;
+    font-size: 1.25rem;
+    color: black;
+    font-weight: bolder;
+}
+/* .content{
+    position: fixed;
+    margin-left: 200px;
+} */
+
+/* kết thúc css của phương */
+/* css của Hường */
+.left-column {
+    width: 80%;
+    height: 100%;
+    background: white;
+    float:left;
+    
+}
+    .right-column {
+    width: 18%;
+    height: 500px;
+    background: #ddd;
+    float:right;
+    /* position: fixed; */
+}
+/*  kết thúc css của hường */
+
