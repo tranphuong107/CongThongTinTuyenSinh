@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th3 12, 2022 lúc 07:58 AM
+-- Thời gian đã tạo: Th3 12, 2022 lúc 12:26 PM
 -- Phiên bản máy phục vụ: 10.4.21-MariaDB
 -- Phiên bản PHP: 8.0.10
 
@@ -73,7 +73,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`UserID`, `UserName`, `Password`, `FullName`, `Email`, `PhoneNumber`, `Types`, `Status`) VALUES
-(1, 'admin', 'admin', 'admin', 'admin@gmail.com', '035782747533', 'Quản trị viên', 'Hoạt động');
+(1, 'admin', 'admin', 'admin', 'admin@gmail.com', '035782747533', 'Quản trị viên', 'Dừng hoạt động'),
+(5, 'admin2', 'd41d8cd98f00b204e9800998ecf8427e', 'admin', 'admin@gmail.com', '0256897547', 'Quản trị viên', 'Dừng hoạt động'),
+(6, 'phuong', 'd41d8cd98f00b204e9800998ecf8427e', 'Trần Phương', 'phuong@gmail.com', '0256454547', 'Quản trị viên', 'Hoạt động');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -106,7 +108,7 @@ ALTER TABLE `posts`
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `UserID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `UserID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Các ràng buộc cho các bảng đã đổ

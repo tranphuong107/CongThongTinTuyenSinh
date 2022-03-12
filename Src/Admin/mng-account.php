@@ -2,7 +2,7 @@
     include ('header.php');
     include ('../config.php');
 ?>
-<div class="content "  >
+    <div class="content">
         <div class="row float-end col-md-8 my-2 mt-3 py-2 me-2  mx-auto" style="background-color:#ffffff; width:80%;" >
                     
                     <div class="jumbotron text-center mt-2 ms-3" style="text-align: center;" >
@@ -10,7 +10,7 @@
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item text-admin">
                                     <a href="index.php">
-                                        <span class=" ">Trang chủ</span>
+                                        <span class="">Trang chủ</span>
                                     </a></li>
                                 <li class="breadcrumb-item text-admin ">
                                     <a href="mng-account.php">
@@ -20,118 +20,99 @@
                         </nav>  
                     </div>
         </div>
-        <nav class="navbar navbar-light bg-img">
-                <div class="container-search">
-                    <form class="d-flex mx-auto col-md-6"id="search"  action="search.php"method="GET">
-                        <input  type="text"value=""name ="search" class="form-control me-2" style="margin-left:150px;width: 400px; height: 40px;"placeholder="Tìm kiếm tài khoản.." aria-label="Search">
-                        <input class ="btn btn-outline-success" type="submit" value="Tìm">
-                    </form>     
+        <div class="row float-end col-md-8 my-2 mt-3 py-2 me-2  " style="background-color:#ffffff; width:80%;" >
+                <nav class="navbar navbar-light bg-img">
+                    <div class="container-search">
+                        <form class="d-flex col-md-6"id="search"  action="search.php"method="GET">
+                            <input  type="text"value=""name ="search" class="form-control me-2" style="width: 800px;height: 40px;"placeholder="Tìm kiếm tài khoản.." aria-label="Search">
+                            <input class ="btn btn-outline-success" type="submit" value="Tìm">
+                        </form>     
+                    </div>
+                    <!-- end container-fluid -->
+                </nav>
+                <div class="status">
+                        <div class="col-sm-2">
+                            <input  type="text"value=""name ="status" class="form-control me-2" style=" width:400px;margin-top:5px;margin-bottom:10px;" placeholder="Chọn trạng thái.." aria-label="Status">
+                    </div>   
+                <div>
+                <div class="them">
+                <a href="add-admin.php"class="them"style = "font-size: 2.5rem;float:right;"><i class="bi bi-plus-square"style="color: green"></i></a>
                 </div>
-                <!-- end container-fluid -->
-            </nav>
-            <div class="status">
-                    <div class="col-sm-2">
-                        <input  type="text"value=""name ="status" class="form-control me-2" style=" width:400px;margin-left:260px;margin-top:5px;margin-bottom:10px;" placeholder="Chọn trạng thái.." aria-label="Status">
-                </div>   
-            <div>
-            <div class="them">
-        <a href="add-admin.php"class="them"style = "font-size: 2.5rem;float:right;"><i class="bi bi-plus-square"style="color: green"></i></a>
-    </div>
-<main>
-<!-- <style>
-   .them{
-    margin-left: 660px;
-}
-.btn-outline-success{
-    width: 70px;
-    height: 40px;
-    margin-top: 0px;
-    
-}
-    .container-tb{
-        margin-left: 260px;
-        margin-top: 0%;
-        height: 500px;
-        border:1px solid white;
-        background-color: white;
-    }
-    .container-search{
-        
-        padding:0%;
-        margin-top:100px;
-        margin-bottom: 0px;
-       
-    }
-    </style> -->
-<div class = "container-tb">
-  
-    <table class="table table-bordered">
-        <div class="table-responsive">           
-                <thead>
-                    <tr> 
-                        <th scope ="col">Mã</th>
-                        <th scope ="col">Tên người dùng</th>
-                        <th scope ="col">Họ và tên</th>
-                        <th scope ="col">Email</th>
-                        <th scope ="col">Số điện thoại</th>   
-                        <th scope ="col">Loại tài khoản</th>
-                        <th scope ="col">Trạng thái</th> 
-                        <th scope ="col">Hoạt động</th>   
-                        <th scope ="col">Xóa tài khoản</th>                
-                       
-                    </tr>
-                   
-                </thead>
-        </div>
-    
-</div>
-<tbody>
-            <?php
+            <main>
+            <style>
+
+
+            .btn-outline-success{
+                width: 70px;
+                height: 40px;
+                margin-top: 0px;
                 
-                    // Bước 02: Thực hiện TRUY VẤN
-                    $sql    = "SELECT*FROM users";
-                    $result = mysqli_query($conn,$sql); //Lưu kết quả trả về vào result
-                    // Bước 03: Phân tích và xử lý kết quả
-                    if(mysqli_num_rows($result)>0){
-                       while($row=mysqli_fetch_assoc($result)){
-                           echo '<tr>';
-                           echo '<th scope="row">'.$row['UserID'].'</th>';
-                           echo '<td>'.$row['UserName'].'</td>';
-                           echo '<td>'.$row['FullName'].'</td>';
-                           echo '<td>'.$row['Email'].'</td>';
-                           echo '<td>'.$row['PhoneNumber'].'</td>';
-                           echo '<td>'.$row['Types'].'</td>';
-                           echo '<td>' .$row['Status'].'</td>';
-                           echo '<td>'; 
-                           if($row['Status'] == 'Hoạt động'){
-                               ?>
-                               <a href="<?php echo SITEURL; ?>admin/edit_pro.php?id=<?php echo $ad_id;  ?>"><i class="bi bi-toggle-on" ></i></i></a>
-                                <?php
-                            }else{
-                                ?>
-                                <a href="<?php echo SITEURL; ?>admin/edit_pro.php?id=<?php echo $ad_id;  ?>"><i class="bi bi-toggle-off" ></i></i></a>
-                                 <?php                           
-                                 }
-                                 echo '</td>';
-                           ?>
-                            <td>
-                           
-                           <a href="delete-admin.php?id=<?php echo $row['UserID'] ?>";><i class="fa fa-trash"></i></a>
-                        
-                           </td>
-                           <?php
-                           echo '</tr>';
-                    }
+            }
+                .container-tb{ 
+                    margin-top: 0%;
+                    border:1px solid white;
+                    background-color: white;
                 }
-                    
-                ?>
-                <!-- Đoạn này thay đổi theo Dữ liệu trong CSDL -->
-            </tbody>
-            </table>
+                .container-search{
+                    padding:0%;
+                    margin-bottom: 0px;
+                
+                }
+                </style>
+                <div class = "container-tb">
+            
+                        <table class="table table-bordered">
+                            <div class="table-responsive">           
+                                    <thead>
+                                        <tr> 
+                                            <th scope ="col">Mã</th>
+                                            <th scope ="col">Tên người dùng</th>
+                                            <th scope ="col">Họ và tên</th>
+                                            <th scope ="col">Email</th>
+                                            <th scope ="col">Số điện thoại</th>   
+                                            <th scope ="col">Loại tài khoản</th>
+                                            <th scope ="col">Trạng thái</th> 
+                                            <th scope ="col">Hoạt động</th>                   
+                                        
+                                        </tr>
+                                    
+                                    </thead>
+                            </div>
+                        
+                    </div>
+                    <tbody>
+                        <?php
+                            
+                                // Bước 02: Thực hiện TRUY VẤN
+                                $sql    = "SELECT*FROM users";
+                                $result = mysqli_query($conn,$sql); //Lưu kết quả trả về vào result
+                                // Bước 03: Phân tích và xử lý kết quả
+                                if(mysqli_num_rows($result)>0){
+                                while($row=mysqli_fetch_assoc($result)){
+                                    echo '<tr>';
+                                    echo '<th scope="row">'.$row['UserID'].'</th>';
+                                    echo '<td>'.$row['UserName'].'</td>';
+                                    echo '<td>'.$row['FullName'].'</td>';
+                                    echo '<td>'.$row['Email'].'</td>';
+                                    echo '<td>'.$row['PhoneNumber'].'</td>';
+                                    echo '<td>'.$row['Types'].'</td>';
+                                    echo '<td>'.$row['Status'].'</td>';
+                                    echo'<td>
+                                    <a href="delete-admin.php?id='.$row['UserID'].'";><i class="fa fa-trash"></i></a>
+                                    </td>';
+                                    echo '</tr>';
+                                }
+                            }
+                                
+                            ?>
+                            <!-- Đoạn này thay đổi theo Dữ liệu trong CSDL -->
+                        </tbody>
+                    </table>
                 </div>
-    </main>
-    
-   <!-- Optional JavaScript; choose one of the two! -->
+            </main>
+        </div>
+    </div>
+  <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
@@ -146,3 +127,4 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cropper/1.0.1/jquery-cropper.js" integrity="sha512-7H4tikIFoyAdYD31w/uNYvvAUL6gyunWXLwTQ7ZXkyjD+brw+PfJpLxFkANnbkKnSJzU89YpnF3fJKbpvV+QYg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 </html>
+    

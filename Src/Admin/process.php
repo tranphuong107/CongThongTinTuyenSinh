@@ -28,13 +28,13 @@ else{
     $ad_pass = md5($ad_pass);
 
     
-    $sql = "SELECT * FROM users WHERE UserName='$username' AND Password='$userpass'";
+    $sql = "SELECT * FROM users WHERE UserName='$username' AND Password='$ad_pass'";
     //AND Status='Đang hoạt động'
     $result = mysqli_query($conn, $sql);
 
     if (mysqli_num_rows($result) === 1) {
          $row = mysqli_fetch_assoc($result);
-        if ($row['UserName'] === $username && $row['Password'] === $userpass) {
+        if ($row['UserName'] === $username && $row['Password'] === $ad_pass && $row['Status']=='Hoạt động' ) {
             $_SESSION['UserName']  = $row['UserName'];
             $_SESSION['FullName'] = $row['FullName'];
             $_SESSION['Email'] = $row['Email'];
