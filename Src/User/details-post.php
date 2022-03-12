@@ -31,40 +31,27 @@
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a style="text-decoration: none; color:darkgray" href="#">TRANG CHỦ</a></li>
             <li class="breadcrumb-item active" aria-current="page"> <a style="text-decoration: none; color:darkgray" href="enrollment-infor.php">THÔNG TIN TUYỂN SINH</a></li>
+            <li class="breadcrumb-item active" aria-current="page"> <a style="text-decoration: none; color:darkgray" href="#">CHI TIẾT BÀI VIẾT</a></li>
         </ol>
     </nav>
     <img src="../images/BG4.jpg" class="img-header " style="height: 500px; width:100% ;object-fit:cover;"alt="">
     <div class="row mx-3">
-    <?php
-            $sql = "SELECT * FROM posts WHERE Category = N'Thông tin tuyển sinh'";
+    <div class="left-column my-4 col-6">
+        <?php
+        if(isset($_GET['id'])){
+            $post_id = $_GET['id'];
+            $sql ="SELECT * FROM posts WHERE PostID = '$post_id'";
             $result = mysqli_query($conn,$sql);
-
-            // Phân tích và xử lí kết quả
             if(mysqli_num_rows($result) > 0){
-              echo'<div class="left-column my-4 px-4  " >';
-              while($row = mysqli_fetch_assoc($result)){
-                echo '<style type="text/css" scoped>';
+                
+                while($row = mysqli_fetch_assoc($result)){
+                    echo '<div class="p-5">'.$row['Content'].'</div>';
                     
-                echo'</style>';
-                    echo'<div class="row g-0 py-3">';
-                        echo'<div class="col-md-4">
-                        <a href="details-post.php?id='.$row['PostID'].'" >
-                        <img src="../Images/'.$row['Image'].'" class="img-fluid " alt="...">
-                        </a>
-                        </div>';
-                        echo'<div class="col-md-8">';
-                        echo'  <div class="card-body">
-                                <a href="details-post.php?id='.$row['PostID'].'" class="my-text">'.$row['Title'].'</a>
-                                <p class="card-text">'.$row['CreatedAt'].'</p>
-                                <p class="card-content" >'.strip_tags(substr($row['Content'],0,180)).'</p>
-                            </div>';
-                       echo' </div>';
-                   echo'</div>';
                 }
-        echo'</div>';
             }
+        }
         ?>
-    
+        </div>
     <div class="right-column my-4 py-4 ms-4 col-6 ">
             <p><span class="text-align-center  px-4 " >
                 TIN LIÊN QUAN</span></p>

@@ -113,10 +113,32 @@
     background-color: white;
     color:#2e86de;
 }
+.my-text {
+    text-decoration: none;
+    font-size: 1.25rem;
+    color: black;
+    font-weight: bolder;
+}
 /* .content{
     position: fixed;
     margin-left: 200px;
 } */
 
 /* kết thúc css của phương */
+/* css của Hường */
+.left-column {
+    width: 80%;
+    height: 100%;
+    background: white;
+    float:left;
+    
+}
+    .right-column {
+    width: 18%;
+    height: 500px;
+    background: #ddd;
+    float:right;
+    /* position: fixed; */
+}
+/*  kết thúc css của hường */
 
