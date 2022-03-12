@@ -1,7 +1,8 @@
-<?php include "header.php"?> 
-<?php include "config.php"?>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-<div class="content border border-dark"  >
+<?php
+    include ('header.php');
+    include ('../config.php');
+?>
+<div class="content "  >
         <div class="row float-end col-md-8 my-2 mt-3 py-2 me-2  mx-auto" style="background-color:#ffffff; width:80%;" >
                     
                     <div class="jumbotron text-center mt-2 ms-3" style="text-align: center;" >
@@ -28,10 +29,6 @@
         </div>
         <!-- end container-fluid -->
     </nav>
-<?php
-
-
-?>
             <div class="status">
                     <div class="col-sm-2">
                         <input  type="text"value=""name ="status" class="form-control me-2" style=" width:400px;margin-left:260px;margin-top:5px;margin-bottom:10px;" placeholder="Chọn trạng thái.." aria-label="Status">
@@ -39,12 +36,12 @@
             <div>
                 <?php 
     
- ?>
+    ?>
             <div class="them">
         <a href="add-admin.php"class="them"style = "font-size: 2.5rem;float:right;"><i class="bi bi-plus-square"style="color: green"></i></a>
     </div>
 <main>
-<style>
+<!-- <style>
    .them{
     margin-left: 660px;
 }
@@ -68,7 +65,7 @@
         margin-bottom: 0px;
        
     }
-    </style>
+    </style> -->
 <div class = "container-tb">
   
     <table class="table table-bordered">
@@ -137,4 +134,18 @@
                 </div>
     </main>
     
-<?php
+  <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src = "js/myjs.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cropper/1.0.1/jquery-cropper.js" integrity="sha512-7H4tikIFoyAdYD31w/uNYvvAUL6gyunWXLwTQ7ZXkyjD+brw+PfJpLxFkANnbkKnSJzU89YpnF3fJKbpvV+QYg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+</html>

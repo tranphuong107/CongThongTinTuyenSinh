@@ -1,7 +1,6 @@
 <?php include ('header.php');  ?>
 <?php include('../config.php'); ?>
 <!-- <style>
-
     .left-column {
     width: 80%;
     height: 500px;

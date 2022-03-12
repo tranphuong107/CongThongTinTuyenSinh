@@ -152,4 +152,28 @@
     /* position: fixed; */
 }
 /*  kết thúc css của hường */
+/* css của thúy */
+   .them{
+    margin-left: 660px;
+}
+.btn-outline-success{
+    width: 70px;
+    height: 40px;
+    margin-top: 0px;
+    
+}
+    .container-tb{
+        margin-left: 260px;
+        margin-top: 0%;
+        height: 500px;
+        border:1px solid white;
+        background-color: white;
+    }
+    .container-search{
+        
+        padding:0%;
+        margin-top:100px;
+        margin-bottom: 0px;
+       
+    }
 
