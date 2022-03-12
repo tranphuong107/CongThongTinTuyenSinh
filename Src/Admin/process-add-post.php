@@ -1,6 +1,6 @@
 <?php
     include '../config.php';
-    if(isset($_POST['btnad']))
+    if(isset($_POST['btnadd']))
     {
         $category =$_POST['txt-category'];
         $title =$_POST['txt-title'];
