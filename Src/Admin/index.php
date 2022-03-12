@@ -1,6 +1,6 @@
 <?php session_start(); 
     include ('header.php');
-    include ('config.php');
+    include ('../config.php');
 ?>
 <div class="content ">
         <div class="row float-end col-md-8 my-2 mt-3 py-2 me-2  mx-auto" style="background-color:#ffffff; width:80%;" >

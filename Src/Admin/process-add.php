@@ -1,5 +1,5 @@
 <?php
-    include 'config.php';
+    include '../config.php';
     if(isset($_POST['btnadd']))
     {
     $ad_name    = $_POST['UserName'];
