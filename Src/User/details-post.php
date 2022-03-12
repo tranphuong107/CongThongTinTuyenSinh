@@ -34,7 +34,7 @@
             <li class="breadcrumb-item active" aria-current="page"> <a style="text-decoration: none; color:darkgray" href="#">CHI TIẾT BÀI VIẾT</a></li>
         </ol>
     </nav>
-    <img src="https://www.tlu.edu.vn/Portals/0/images/2021/bia.jpg" class="img-header " style="height: 500px; width:100% ;object-fit:cover;"alt="">
+    <img src="https://tuyensinh.hce.edu.vn/wp-content/uploads/2019/02/Sequence-01.Still011.jpg" class="img-header " style="height: 300px; width:100% ;object-fit:cover;"alt="">
     <div class="row mx-3">
     <div class="left-column my-4 col-6">
         <?php

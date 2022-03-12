@@ -48,13 +48,13 @@
                 echo'</style>';
                     echo'<div class="row g-0 py-3">';
                         echo'<div class="col-md-4">
-                        <a href="details-post.php?id='.$row['PostID'].'" >
+                        <a href="detail-post1.php?id='.$row['PostID'].'" >
                         <img src="../Images/'.$row['Image'].'" class="img-fluid " alt="...">
                         </a>
                         </div>';
                         echo'<div class="col-md-8">';
                         echo'  <div class="card-body">
-                                <a href="details-post.php?id='.$row['PostID'].'" class="my-text">'.$row['Title'].'</a>
+                                <a href="detail-post1.php?id='.$row['PostID'].'" class="my-text">'.$row['Title'].'</a>
                                 <p class="card-text">'.$row['CreatedAt'].'</p>
                                 <p class="card-content" >'.strip_tags(substr($row['Content'],0,180)).'</p>
                             </div>';
