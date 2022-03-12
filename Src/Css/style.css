@@ -123,6 +123,17 @@
     position: fixed;
     margin-left: 200px;
 } */
+    .float-container{
+        position: relative;
+        text-align: center;
+    }
+    .float-img{
+        position: absolute;
+        bottom: 45%;
+        margin: 0 auto;
+        text-align: center;
+        margin-left: 15%;
+    }
 
 /* kết thúc css của phương */
 /* css của Hường */
