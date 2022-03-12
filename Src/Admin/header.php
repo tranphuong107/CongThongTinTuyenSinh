@@ -1,3 +1,9 @@
+<?php
+    session_start();//bảo vệ tk admin
+    if(!isset($_SESSION['UserName'])){
+        header ("location:login.php");
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
