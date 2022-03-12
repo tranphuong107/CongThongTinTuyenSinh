@@ -37,17 +37,17 @@
                     <div class="jumbotron text-center mt-2 ms-3" style="text-align: center;" >
                         <nav aria-label="breadcrumb"  >
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item ">
+                                <li class="breadcrumb-item text-admin">
                                     <a href="#">
-                                        <span class="my-text ">Trang chủ</span>
+                                        <span class="">Trang chủ</span>
                                     </a></li>
-                                <li class="breadcrumb-item  ">
+                                <li class="breadcrumb-item  text-admin">
                                     <a href="#">
-                                        <span class="my-text ">Quản lý bài viết</span>
+                                        <span class="">Quản lý bài viết</span>
                                     </a></li>
-                                <li class="breadcrumb-item active ">
+                                <li class="breadcrumb-item active text-admin ">
                                     <a href="#">
-                                        <span class="my-text ">Danh sách bài viết</span>
+                                        <span class="">Danh sách bài viết</span>
                                     </a></li>
                             </ol>
                         </nav>  
@@ -62,7 +62,7 @@
                     <form action="" method ="post">
                             <input type="search"  class="my-2 p-2 border-0 rounded-2 " style="width: 300px; background-color:#f1f2f6;" name="Search" placeholder="Tìm kiếm bài viết...">
                             <input type="submit" name="btn-search" value="Tìm kiếm" class="py-2 btn btn-primary  border-0 " style="background-color: #1e1d1d ">
-                            <a href="#" id = "add-btn" style = "font-size: 2.5rem;float:right;"><i class="far fa-plus-square"></i></a>
+                            <a href="add-post.php" id = "add-btn" style = "font-size: 2.5rem;float:right;"><i class="far fa-plus-square"></i></a>
 
                     </form>
                 </div>
