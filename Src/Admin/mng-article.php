@@ -62,7 +62,7 @@
                     <form action="" method ="post">
                             <input type="search"  class="my-2 p-2 border-0 rounded-2 " style="width: 300px; background-color:#f1f2f6;" name="Search" placeholder="Tìm kiếm bài viết...">
                             <input type="submit" name="btn-search" value="Tìm kiếm" class="py-2 btn btn-primary  border-0 " style="background-color: #1e1d1d ">
-                            <a href="#" id = "add-btn" style = "font-size: 2.5rem;float:right;"><i class="far fa-plus-square"></i></a>
+                            <a href="add-post.php" id = "add-btn" style = "font-size: 2.5rem;float:right;"><i class="far fa-plus-square"></i></a>
 
                     </form>
                 </div>
