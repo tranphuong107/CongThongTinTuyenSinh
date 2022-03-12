@@ -31,23 +31,23 @@
         margin-left: 2%;
     }
 </style>
-<div class="content"  >
+<div class="content "  >
         <div class="row float-end col-md-8 my-2 mt-3 py-2 me-2  mx-auto" style="background-color:#ffffff; width:80%;" >
                     
                     <div class="jumbotron text-center mt-2 ms-3" style="text-align: center;" >
                         <nav aria-label="breadcrumb"  >
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item text-admin">
+                                <li class="breadcrumb-item ">
                                     <a href="#">
-                                        <span class=" ">Trang chủ</span>
+                                        <span class="my-text ">Trang chủ</span>
                                     </a></li>
-                                <li class="breadcrumb-item text-admin ">
+                                <li class="breadcrumb-item  ">
                                     <a href="#">
-                                        <span class=" ">Quản lý bài viết</span>
+                                        <span class="my-text ">Quản lý bài viết</span>
                                     </a></li>
-                                <li class="breadcrumb-item active text-admin">
+                                <li class="breadcrumb-item active ">
                                     <a href="#">
-                                        <span class=" ">Danh sách bài viết</span>
+                                        <span class="my-text ">Danh sách bài viết</span>
                                     </a></li>
                             </ol>
                         </nav>  
@@ -62,38 +62,38 @@
                     <form action="" method ="post">
                             <input type="search"  class="my-2 p-2 border-0 rounded-2 " style="width: 300px; background-color:#f1f2f6;" name="Search" placeholder="Tìm kiếm bài viết...">
                             <input type="submit" name="btn-search" value="Tìm kiếm" class="py-2 btn btn-primary  border-0 " style="background-color: #1e1d1d ">
-                            <a href="add-post.php" id = "add-btn" style = "font-size: 2.5rem;float:right;"><i class="far fa-plus-square"></i></a>
+                            <a href="#" id = "add-btn" style = "font-size: 2.5rem;float:right;"><i class="far fa-plus-square"></i></a>
 
                     </form>
                 </div>
             </div>
             <div class="list-article">
                 <div class="">
-                    <h5><a href="index.php" class=""style="color: #0073b4"></i><span>Trang chủ</span></a></h5>
+                    <h5><a href="index.php" style="color: #0073b4"></i><span>Trang chủ</span></a></h5>
                     <?php
                             //kết nối csdl
                             //thực hiện truy vấn
-                            $sql = "SELECT * FROM posts,users where Category = 'Giới thiệu'";
+                            $sql = "SELECT * FROM posts p,users u where Category = 'Giới thiệu' and p.UserID = u.UserID";
                             $result = mysqli_query($conn,$sql);
 
-                    // Phân tích và xử lí kết quả
-                    if(mysqli_num_rows($result) > 0){
-                        echo'<div class="row row-cols-1 row-cols-md-3 g-5  px-4 pb-5">';
-                        while($row = mysqli_fetch_assoc($result)){?>
-                            <div class="col-6 d-flex">
-                            <div class="box1">
-                            <div class="box-img me-4">
-                                <img src="../Images/<?php echo $row['Image']?>" alt="Ảnh" class="img-responsive">
-                            </div>
-                            <div class="box-text1">
-                                <h6>   <?php echo $row['Title']?></h6>
-                                <p style="color:#878787"><i class="fa fa-calendar" aria-hidden="true" style="color:#FF5F5D"></i>    <?php echo $row['CreatedAt']?></p>
-                                <p style="color:#878787"><i class="fa fa-user" aria-hidden="true" style="color:#FF5F5D"></i>    <?php echo $row['UserName']?></p>
-                            </div>
-                        </div>
-                        </div>
-                    
-                    <?php }
+            // Phân tích và xử lí kết quả
+            if(mysqli_num_rows($result) > 0){
+                echo'<div class="row row-cols-1 row-cols-md-3 g-5  px-4 pb-5">';
+                while($row = mysqli_fetch_assoc($result)){?>
+                    <div class="col-6 d-flex">
+                    <div class="box1">
+                    <div class="box-img me-4">
+                        <img src="../Images/<?php echo $row['Image']?>" alt="Ảnh" class="img-responsive">
+                    </div>
+                    <div class="box-text1">
+                        <h6>   <?php echo $row['Title']?></h6>
+                        <p style="color:#878787"><i class="fa fa-calendar" aria-hidden="true" style="color:#FF5F5D"></i>    <?php echo $row['CreatedAt']?></p>
+                        <p style="color:#878787"><i class="fa fa-user" aria-hidden="true" style="color:#FF5F5D"></i>    <?php echo $row['UserName']?></p>
+                    </div>
+                </div>
+                </div>
+               
+               <?php }
                 echo'</div>';
             }
                             
@@ -128,7 +128,7 @@
                     <?php
                             //kết nối csdl
                             //thực hiện truy vấn
-                            $sql = "SELECT * FROM posts,users where Category = 'Thông tin tuyển sinh'";
+                            $sql = "SELECT * FROM posts p,users u where Category = 'Thông tin tuyển sinh' and p.UserID = u.UserID";
                             $result = mysqli_query($conn,$sql);
 
             // Phân tích và xử lí kết quả
@@ -143,7 +143,7 @@
                     <div class="box-text">
                         <h6><?php echo $row['Title']?></h6>
                         <p style="color:#878787"><i class="fa fa-calendar" aria-hidden="true" style="color:#FF5F5D"></i>  <?php echo $row['CreatedAt']?></p>
-                        <p style="color:#878787"><i class="fa fa-user" aria-hidden="true" style="color:#FF5F5D"></i>  <?php echo $row['UserName']?></p>
+                        <!-- <p style="color:#878787"><i class="fa fa-user" aria-hidden="true" style="color:#FF5F5D"></i>  <?php echo $row['UserName']?></p> -->
                     </div>
                 </div>
                 </div>
@@ -158,7 +158,7 @@
                     <?php
                             //kết nối csdl
                             //thực hiện truy vấn
-                            $sql = "SELECT * FROM posts,users where Category = 'Ngành đào tạo'";
+                            $sql = "SELECT * FROM posts p,users u where Category = 'Ngành đào tạo' and p.UserID = u.UserID";
                             $result = mysqli_query($conn,$sql);
 
             // Phân tích và xử lí kết quả
