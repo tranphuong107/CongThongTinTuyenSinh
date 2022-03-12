@@ -119,6 +119,14 @@
     color: black;
     font-weight: bolder;
 }
+.text-admin{
+    text-decoration: none;
+    color: black;
+}
+.text-admin a :hover{
+    font-weight: bold !important;
+}
+
 /* .content{
     position: fixed;
     margin-left: 200px;
