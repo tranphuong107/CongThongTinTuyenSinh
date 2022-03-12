@@ -37,17 +37,17 @@
                     <div class="jumbotron text-center mt-2 ms-3" style="text-align: center;" >
                         <nav aria-label="breadcrumb"  >
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item ">
+                                <li class="breadcrumb-item text-admin">
                                     <a href="#">
-                                        <span class="my-text ">Trang chủ</span>
+                                        <span class="">Trang chủ</span>
                                     </a></li>
-                                <li class="breadcrumb-item  ">
+                                <li class="breadcrumb-item  text-admin">
                                     <a href="#">
-                                        <span class="my-text ">Quản lý bài viết</span>
+                                        <span class="">Quản lý bài viết</span>
                                     </a></li>
-                                <li class="breadcrumb-item active ">
+                                <li class="breadcrumb-item active text-admin ">
                                     <a href="#">
-                                        <span class="my-text ">Danh sách bài viết</span>
+                                        <span class="">Danh sách bài viết</span>
                                     </a></li>
                             </ol>
                         </nav>  
