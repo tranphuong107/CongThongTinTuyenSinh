@@ -20,21 +20,21 @@
             <a class="nav-link " aria-current="page" href="index.php">TRANG CHỦ</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link active" href="enrollment-infor.php">THÔNG TIN TUYỂN SINH</a>
+            <a class="nav-link " href="enrollment-infor.php">THÔNG TIN TUYỂN SINH</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link " href="training-industry.php">NGÀNH ĐÀO TẠO</a>
+            <a class="nav-link active" href="training-industry.php">NGÀNH ĐÀO TẠO</a>
         </li>   
     </ul>
 
     <nav class= "bg-white px-3 py-1 my-1 text-align-center" style="height: 40px;" aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a style="text-decoration: none; color:darkgray" href="#">TRANG CHỦ</a></li>
-            <li class="breadcrumb-item active" aria-current="page"> <a style="text-decoration: none; color:darkgray" href="enrollment-infor.php">THÔNG TIN TUYỂN SINH</a></li>
+            <li class="breadcrumb-item active" aria-current="page"> <a style="text-decoration: none; color:darkgray" href="training-industry.php">NGÀNH ĐÀO TẠO</a></li>
             <li class="breadcrumb-item active" aria-current="page"> <a style="text-decoration: none; color:darkgray" href="#">CHI TIẾT BÀI VIẾT</a></li>
         </ol>
     </nav>
-    <img src="../images/BG4.jpg" class="img-header " style="height: 500px; width:100% ;object-fit:cover;"alt="">
+    <img src="https://www.tlu.edu.vn/Portals/0/images/2021/bia.jpg" class="img-header " style="height: 500px; width:100% ;object-fit:cover;"alt="">
     <div class="row mx-3">
     <div class="left-column my-4 col-6">
         <?php
