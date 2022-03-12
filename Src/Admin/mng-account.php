@@ -8,35 +8,32 @@
                     <div class="jumbotron text-center mt-2 ms-3" style="text-align: center;" >
                         <nav aria-label="breadcrumb"  >
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item ">
+                                <li class="breadcrumb-item text-admin">
                                     <a href="index.php">
-                                        <span class="my-text ">Trang chủ</span>
+                                        <span class=" ">Trang chủ</span>
                                     </a></li>
-                                <li class="breadcrumb-item  ">
+                                <li class="breadcrumb-item text-admin ">
                                     <a href="mng-account.php">
-                                        <span class="my-text ">Quản lý tài khoản</span>
+                                        <span class=" ">Quản lý tài khoản</span>
                                     </a></li>
                             </ol>
                         </nav>  
                     </div>
         </div>
-<nav class="navbar navbar-light bg-img">
-        <div class="container-search">
-            <form class="d-flex mx-auto col-md-6"id="search"  action="search.php"method="GET">
-                <input  type="text"value=""name ="search" class="form-control me-2" style="margin-left:150px;width: 400px; height: 40px;"placeholder="Tìm kiếm tài khoản.." aria-label="Search">
-                <input class ="btn btn-outline-success" type="submit" value="Tìm">
-            </form>     
-        </div>
-        <!-- end container-fluid -->
-    </nav>
+        <nav class="navbar navbar-light bg-img">
+                <div class="container-search">
+                    <form class="d-flex mx-auto col-md-6"id="search"  action="search.php"method="GET">
+                        <input  type="text"value=""name ="search" class="form-control me-2" style="margin-left:150px;width: 400px; height: 40px;"placeholder="Tìm kiếm tài khoản.." aria-label="Search">
+                        <input class ="btn btn-outline-success" type="submit" value="Tìm">
+                    </form>     
+                </div>
+                <!-- end container-fluid -->
+            </nav>
             <div class="status">
                     <div class="col-sm-2">
                         <input  type="text"value=""name ="status" class="form-control me-2" style=" width:400px;margin-left:260px;margin-top:5px;margin-bottom:10px;" placeholder="Chọn trạng thái.." aria-label="Status">
                 </div>   
             <div>
-                <?php 
-    
-    ?>
             <div class="them">
         <a href="add-admin.php"class="them"style = "font-size: 2.5rem;float:right;"><i class="bi bi-plus-square"style="color: green"></i></a>
     </div>
@@ -134,7 +131,7 @@
                 </div>
     </main>
     
-  <!-- Optional JavaScript; choose one of the two! -->
+   <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
