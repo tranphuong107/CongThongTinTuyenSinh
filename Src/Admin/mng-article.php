@@ -143,7 +143,7 @@
                     <div class="box-text">
                         <h6><?php echo $row['Title']?></h6>
                         <p style="color:#878787"><i class="fa fa-calendar" aria-hidden="true" style="color:#FF5F5D"></i>  <?php echo $row['CreatedAt']?></p>
-                        <!-- <p style="color:#878787"><i class="fa fa-user" aria-hidden="true" style="color:#FF5F5D"></i>  <?php echo $row['UserName']?></p> -->
+                        <p style="color:#878787"><i class="fa fa-user" aria-hidden="true" style="color:#FF5F5D"></i>  <?php echo $row['UserName']?></p>
                     </div>
                 </div>
                 </div>
