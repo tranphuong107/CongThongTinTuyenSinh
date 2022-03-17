@@ -28,7 +28,7 @@
           position: fixed;
           left: 0;
           width: 230px;
-          height: 32%;
+          height: 34%;
           background-color: white;
           margin-top: 17px;
           margin-left: 16px;
