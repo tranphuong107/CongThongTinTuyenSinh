@@ -72,7 +72,7 @@
                                             <th scope ="col">Số điện thoại</th>   
                                             <th scope ="col">Loại tài khoản</th>
                                             <th scope ="col">Trạng thái</th> 
-                                            <th scope ="col">Hoạt động</th>                   
+                                            <th scope ="col">Xóa tài khoản</th>                   
                                         
                                         </tr>
                                     
@@ -84,7 +84,7 @@
                         <?php
                             
                                 // Bước 02: Thực hiện TRUY VẤN
-                                $sql    = "SELECT*FROM users";
+                                $sql    = "SELECT*FROM users where Status ='Hoạt động'";
                                 $result = mysqli_query($conn,$sql); //Lưu kết quả trả về vào result
                                 // Bước 03: Phân tích và xử lý kết quả
                                 if(mysqli_num_rows($result)>0){
