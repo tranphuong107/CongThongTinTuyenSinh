@@ -43,12 +43,12 @@
             if($result1 == true){ 
                 while($row = mysqli_fetch_assoc($result1)){?>
         <div class="row float-end col-md-8 my-2 mb-3 py-2 me-2  mx-auto" style="background-color:#ffffff; width:80%;">
-                    <h4 class ="m-2 p-2 ms-3 fw-bold">Sửa bài viết</h2>
-                    <form action ="process-update-post.php" method ="post" class=" mx-3 rounded-3 " style =" border-radius: 30px">
+                    <h4 class ="m-2 p-2 ms-3 mb-4 fw-bold">Sửa bài viết</h2>
+                    <form action ="process-update-post.php" method ="post" class=" mx-3 ps-5 rounded-3 " style =" border-radius: 30px">
                         <div class="row ">
                             <div class=" col-7 ">
                                 <label for="" class="form-label" style="position: relative;">ID bài viết:</label>
-                                <input type="text" class="form-control border border-dark me-4" disabled style="width:4%;margin-left:8%;top:160px; position: absolute;" id="" name ="txt-title" value = "<?php echo $row['PostID'];?>">
+                                <input type="text" class="form-control border border-dark me-4" disabled style="width:4%;margin-left:8%;top:171px; position: absolute;" id="" name ="txt-title" value = "<?php echo $row['PostID'];?>">
                                 <div class="mt-4 col-7 ">
                                     <label for="" class="form-label">Tiêu đề:</label>
                                     <input type="text" class="form-control border border-dark me-4" style="width:525px;" id="" name ="txt-title" value = "<?php echo $row['Title'];?>">
@@ -87,9 +87,9 @@
                         </div>
                         <div class="row ">
                             <div class=" ">
-                                <div class="mb-3 noidung ">
-                                    <label for="" class="form-label" >Nội dung:</label>
-                                    <textarea type="" class="form-control border ms-5 border-dark " style="height:150px; width:70%;" id="summernote" name ="txt-content" <?php echo $row['Content'];?>></textarea>
+                                <div class="mb-3 noidung ms-4">
+                                    <label for="" class="form-label" style="margin-left:-20px;">Nội dung:</label>
+                                    <textarea type="" class="form-control border ms-5 border-dark ps-3" style="height:150px; width:100%;" id="summernote" name ="txt-content" <?php echo $row['Content'];?>></textarea>
                                 
                                 </div>
                             </div>
@@ -140,6 +140,7 @@
         $("#summernote").summernote();
         $('.dropdown-toggle').dropdown();
     });
+    
 </script>
 </body>
 </html>
