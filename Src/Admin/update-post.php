@@ -29,57 +29,73 @@
                                     </a></li>
                                 <li class="breadcrumb-item active text-admin">
                                     <a href="add-post.php">
-                                        <span class="text-admin ">Thêm bài viết</span>
+                                        <span class="text-admin ">Sửa bài viết</span>
                                     </a></li>
                             </ol>
                         </nav>  
                     </div>
         </div>
+        <?php
+            $post_id = $_GET['id'];
+            $sql1 = "SELECT * FROM posts WHERE PostID = '$post_id';";
+            $result1 = mysqli_query($conn,$sql1);
+
+            if($result1 == true){ 
+                while($row = mysqli_fetch_assoc($result1)){?>
         <div class="row float-end col-md-8 my-2 mb-3 py-2 me-2  mx-auto" style="background-color:#ffffff; width:80%;">
-                    <h4 class ="m-2 p-2 ms-3 mb-3 fw-bold">Thêm bài viết</h2>
-                    <form action ="process-add-post.php" method ="post" class=" m-3 rounded-3 " style =" border-radius: 30px">
+                    <h4 class ="m-2 p-2 ms-3 fw-bold">Sửa bài viết</h2>
+                    <form action ="process-update-post.php" method ="post" class=" mx-3 rounded-3 " style =" border-radius: 30px">
                         <div class="row ">
-                            <div class="mb-3 col-7 ">
-                                <label for="" class="form-label">Tiêu đề:</label>
-                                <input type="text" class="form-control border border-dark me-4" style="width:87%;" id="" name ="txt-title">
+                            <div class=" col-7 ">
+                                <label for="" class="form-label" style="position: relative;">ID bài viết:</label>
+                                <input type="text" class="form-control border border-dark me-4" disabled style="width:4%;margin-left:8%;top:160px; position: absolute;" id="" name ="txt-title" value = "<?php echo $row['PostID'];?>">
+                                <div class="mt-4 col-7 ">
+                                    <label for="" class="form-label">Tiêu đề:</label>
+                                    <input type="text" class="form-control border border-dark me-4" style="width:525px;" id="" name ="txt-title" value = "<?php echo $row['Title'];?>">
+                                </div>
                             </div>
 
-                            <div class="col-5">
-                                <div  class = " text-begin pb-2 ">Hình ảnh: </div> 
-                                <input type="file" name="txt-image" id ="imageFile" value="Chọn ảnh" onchange="chooseFile(this)" accept= "image/gif, image/jpeg, image/png"/> 
+                            <div class="col-5 mb-3">
+                                <div  class = " text-begin pb-2 ">Hình ảnh hiện tại: </div> 
+                                <img src="../Images/<?php echo $row['Image']?>" alt=""  style = "width:200px; height:150px;">
                             </div>
-                        </div>
-                        <div class="row py-1">
-                            <div class="mb-3 col-7 ">
-                                <label class=" me-4 "for="cars">Danh mục: </label>
-                                <select class ="p-2 border border-dark rounded-3 " name="txt-category" id="category">
-                                <option value="0" selected disabled hidden>Chọn danh mục</option>
-                                <option value="Giới thiệu">Giới thiệu</option>
-                                <option value="Thông tin tuyển sinh">Thông tin tuyển sinh</option>
-                                <option value="Ngành đào tạo">Ngành đào tạo</option>
-                                </select>
-                            </div>
-                            <div class="col-5">
-                            <img src="" alt="" id="image" style = "width:200px; height:150px;">
-                            </div>
+                               
+                                <div class="mb-5 col-7  ">
+                                    <label class=" me-4 "for="cars">Danh mục: </label>
+                                    <select class ="p-2 border border-dark rounded-3 " name="txt-category" id="category">          
+                                    <option value="<?php echo $row['Category'];?>" selected  hidden><?php echo $row['Category'];?></option>
+                                    <option value="Giới thiệu">Giới thiệu</option>
+                                    <option value="Thông tin tuyển sinh">Thông tin tuyển sinh</option>
+                                    <option value="Ngành đào tạo">Ngành đào tạo</option>
+                                    </select>
+                                    <div class="mb-3 py-2 mt-5">
+                                    <label for="" class="form-label">Người tạo:</label>
+                                    <input type="text" class="form-control border border-dark" style="width:47%;" id="" name ="txt-userid" value ="<?php echo $row['UserID'];?>">
+                                </div>
+                                </div>
+                                <div class="mb-3 col-5">
+                                    <div class="col-5 mb-3">
+                                        <div  class = " text-begin pb-2 ">Hình ảnh thay thế: </div> 
+                                        <input type="file" name="txt-image" id ="imageFile" value="Chọn ảnh" onchange="chooseFile(this)" accept= "image/gif, image/jpeg, image/png"/> 
+                                    </div>
+                                    <div class="col-5">
+                                    <img src="" alt="" id="image" style = "width:200px; height:150px;">
+                                    </div>
+                                </div>
+                                
+                                
                         </div>
                         <div class="row ">
-                            <div class="mb-3 col-7  ">
-                                <div class="mb-3 noidung">
+                            <div class=" ">
+                                <div class="mb-3 noidung ">
                                     <label for="" class="form-label" >Nội dung:</label>
-                                    <textarea type="" class="form-control border border-dark " style="height:150px; width:70%;" id="summernote" name ="txt-content" ></textarea>
+                                    <textarea type="" class="form-control border ms-5 border-dark " style="height:150px; width:70%;" id="summernote" name ="txt-content" <?php echo $row['Content'];?>></textarea>
                                 
                                 </div>
                             </div>
-                            <div class="mb-3 col-5">
-                                <div class="mb-3 py-2">
-                                    <label for="" class="form-label">Người tạo:</label>
-                                    <input type="text" class="form-control border border-dark" style="width:87%;" id="" name ="txt-userid">
-                                </div>
-                            </div>
+                            
                         </div>
                         <div class="row">
-
                             <div></div>
                             <div class="col-6"></div>
                             <div class="col-6 d-flex justify-content-center ">
@@ -88,6 +104,13 @@
                             </div>
                         </div>
                     </form>
+                    <?php
+                         }}else{
+                            echo '<script>';
+                            echo 'alert ("Có lỗi gì đó xảy ra. Vui lòng thử lại!");';
+                            echo "location.href = 'mng-article.php';";     
+                            echo '</script>';
+            }?>
         </div>
     </div>
    <!-- Optional JavaScript; choose one of the two! -->

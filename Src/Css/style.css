@@ -137,13 +137,13 @@
     }
     .float-img{
         position: absolute;
-        bottom: 35%;
+        top: 10%;
         margin: 0 auto;
         text-align: center;
         margin-left: 15%;
     }
-
 /* kết thúc css của phương */
+
 /* css của Hường */
 .left-column {
     width: 80%;

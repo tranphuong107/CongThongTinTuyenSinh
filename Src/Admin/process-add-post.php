@@ -15,7 +15,10 @@
             //kiểm tra lệnh sql 
             //echo $sql;
             if($result>0){
-                header ("location:mng-article.php");
+                echo '<script>';
+                echo 'alert ("Thêm bài viết thành công!");';
+                echo "location.href = 'mng-article.php';";     
+                echo '</script>';
             }else{
                 echo 'có lỗi xảy ra!';
             }

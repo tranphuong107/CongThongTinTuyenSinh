@@ -7,7 +7,7 @@
         width: 100%;
         margin-left: 2%;
         float:left;
-        padding: 1%;
+    
     }
     .box-img{
         width: 40%;
@@ -17,13 +17,17 @@
         width: 100%;
     }
     .box-text{
-        width: 43%;
+        width: 55%;
+        height:100%;
         float: left;
         margin-left: 5%;
     }
     .box-text1{
         width: 50%;
         float: left;
+    }
+    .box-text p{
+        margin-bottom:0.2rem;
     }
     .box1{
         width: 100%;
@@ -80,18 +84,26 @@
             if(mysqli_num_rows($result) > 0){
                 echo'<div class="row row-cols-1 row-cols-md-3 g-5  px-4 pb-5">';
                 while($row = mysqli_fetch_assoc($result)){?>
-                    <div class="col-6 d-flex">
-                    <div class="box1">
-                    <div class="box-img me-4">
-                        <img src="../Images/<?php echo $row['Image']?>" alt="Ảnh" class="img-responsive">
+                    <div class="col-6 d-flex  pe-0">
+                        <div class="box">
+                            <div class="box-img  ">
+                                <img src="../Images/<?php echo $row['Image']?>" alt="Ảnh" class="img-responsive">
+                            </div>
+                            <div class="box-text  ">
+                                <h6>   <?php echo $row['Title']?></h6>
+                                <p style="color:#878787; "><i class="fa fa-calendar pe-1" aria-hidden="true" style="color:#FF5F5D"></i><?php echo $row['CreatedAt']?></p>
+                                <p style="color:#878787;"><i class="fa fa-user pe-1" aria-hidden="true" style="color:#FF5F5D"></i>    <?php echo $row['UserName']?></p>
+                                <div class="row">
+                                    <div class="col-6 ">
+                                        <a href="update-post.php?id=<?php echo $row['PostID']?>" class="float-end" style="color:#878787"><i class="fa fa-edit" aria-hidden="true" style="color:#FF5F5D"></i></a>
+                                    </div>
+                                    <div class="col-6">
+                                        <a href="#" style="color:#878787"><i class="fa fa-trash-alt" aria-hidden="true" style="color:#FF5F5D"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="box-text1">
-                        <h6>   <?php echo $row['Title']?></h6>
-                        <p style="color:#878787"><i class="fa fa-calendar" aria-hidden="true" style="color:#FF5F5D"></i>    <?php echo $row['CreatedAt']?></p>
-                        <p style="color:#878787"><i class="fa fa-user" aria-hidden="true" style="color:#FF5F5D"></i>    <?php echo $row['UserName']?></p>
-                    </div>
-                </div>
-                </div>
                
                <?php }
                 echo'</div>';
@@ -133,17 +145,25 @@
 
             // Phân tích và xử lí kết quả
             if(mysqli_num_rows($result) > 0){
-                echo'<div class="row row-cols-1 row-cols-md-3 g-5  px-4 pb-5">';
+                echo'<div class="row row-cols-1 row-cols-md-3 g-5 px-4 pb-5">';
                 while($row = mysqli_fetch_assoc($result)){?>
-                    <div class="col-6 d-flex">
+                    <div class="col-6 d-flex  pe-0">
                     <div class="box">
-                    <div class="box-img">
-                        <img src="../Images/<?php echo $row['Image']?>" alt="Ảnh" class="img-responsive">
+                    <div class="box-img ">
+                        <img src="../Images/<?php echo $row['Image']?>"  alt="Ảnh" class="img-responsive">
                     </div>
-                    <div class="box-text">
-                        <h6><?php echo $row['Title']?></h6>
-                        <p style="color:#878787"><i class="fa fa-calendar" aria-hidden="true" style="color:#FF5F5D"></i>  <?php echo $row['CreatedAt']?></p>
-                        <p style="color:#878787"><i class="fa fa-user" aria-hidden="true" style="color:#FF5F5D"></i>  <?php echo $row['UserName']?></p>
+                    <div class="box-text " >
+                        <h6 style="height:70px;"><?php echo $row['Title']?></h6>
+                        <p style="color:#878787 "><i class="fa fa-calendar" aria-hidden="true" style="color:#FF5F5D"></i>  <?php echo $row['CreatedAt']?></p>
+                        <p style="color:#878787"><i class="fa fa-user pe-1 pt-1" aria-hidden="true" style="color:#FF5F5D"></i><?php echo $row['UserName']?></p>
+                        <div class="row">
+                            <div class="col-6 ">
+                                <a href="update-post.php?id=<?php echo $row['PostID']?>" class="float-end" style="color:#878787"><i class="fa fa-edit" aria-hidden="true" style="color:#FF5F5D"></i></a>
+                            </div>
+                            <div class="col-6">
+                                <a href="#" style="color:#878787"><i class="fa fa-trash-alt" aria-hidden="true" style="color:#FF5F5D"></i></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 </div>
@@ -165,7 +185,7 @@
             if(mysqli_num_rows($result) > 0){
                 echo'<div class="row row-cols-1 row-cols-md-3 g-5  px-4 pb-5">';
                 while($row = mysqli_fetch_assoc($result)){?>
-                    <div class="col-6 d-flex">
+                    <div class="col-6 d-flex pe-0">
                     <div class="box">
                     <div class="box-img">
                         <img src="../Images/<?php echo $row['Image']?>" alt="Ảnh" class="img-responsive">
@@ -174,6 +194,14 @@
                         <h6><?php echo $row['Title']?></h6>
                         <p style="color:#878787"><i class="fa fa-calendar" aria-hidden="true" style="color:#FF5F5D"></i>  <?php echo $row['CreatedAt']?></p>
                         <p style="color:#878787"><i class="fa fa-user" aria-hidden="true" style="color:#FF5F5D"></i>  <?php echo $row['UserName']?></p>
+                        <div class="row">
+                            <div class="col-6 ">
+                                <a href="update-post.php?id=<?php echo $row['PostID']?>" class="float-end" style="color:#878787"><i class="fa fa-edit" aria-hidden="true" style="color:#FF5F5D"></i></a>
+                            </div>
+                            <div class="col-6">
+                                <a href="#" style="color:#878787"><i class="fa fa-trash-alt" aria-hidden="true" style="color:#FF5F5D"></i></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 </div>

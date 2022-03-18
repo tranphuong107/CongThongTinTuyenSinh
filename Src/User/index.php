@@ -36,7 +36,7 @@ include ('header.php');
             <li class="breadcrumb-item"><a style="text-decoration: none; color:darkgray " href="index.php">TRANG CHỦ</a></li>
         </ol>
     </nav>
-    <img src="../images/BG3.jpg" class="img-header " style="height: 500px; width:100% ;object-fit:cover;"alt="">
+    <img src="../images/BG3.jpg" class="img-header img-reponsive" style="height: 400px; width:100% ;object-fit:cover;"alt="">
     <div class="row  mx-3">
         <div class="left-column my-4 col-6">
         <?php
