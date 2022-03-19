@@ -63,14 +63,16 @@
                     <h4 class ="m-2 p-2 ms-3 fw-bold"><img src="https://img.icons8.com/ios/30/000000/edit-property.png"/></i>  Danh sách bài viết</h2>
                 </div>
                 <div class=" p-3 ">
-                    <form action="" method ="post">
-                            <input type="search"  class="my-2 p-2 border-0 rounded-2 " style="width: 300px; background-color:#f1f2f6;" name="Search" placeholder="Tìm kiếm bài viết...">
-                            <input type="submit" name="btn-search" value="Tìm kiếm" class="py-2 btn btn-primary  border-0 " style="background-color: #1e1d1d ">
-                            <a href="add-post.php" id = "add-btn" style = "font-size: 2.5rem;float:right;"><i class="far fa-plus-square"></i></a>
-
-                    </form>
+                    <p>
+                <form action="search.php" method="get">
+                <input type="text"  class="my-2 p-2 border-0 rounded-2 " style="width: 300px; background-color:#f1f2f6;" name="search" placeholder="Tìm kiếm bài viết..."value="<?php if(isset($_POST['search'])) {echo $_POST['search'];}?>">
+                <input type="submit" name="btn-search" value="Tìm kiếm" class="py-2 btn btn-primary  border-0 " style="background-color: #1e1d1d ">
+                <a href="add-post.php" id = "add-btn" style = "font-size: 2.5rem;float:right;"><i class="far fa-plus-square"></i></a>
+                  </p> 
+            </form>
                 </div>
             </div>
+            
             <div class="list-article">
                 <div class="">
                     <h5><a href="index.php" style="color: #0073b4"></i><span>Trang chủ</span></a></h5>
@@ -84,6 +86,19 @@
             if(mysqli_num_rows($result) > 0){
                 echo'<div class="row row-cols-1 row-cols-md-3 g-5  px-4 pb-5">';
                 while($row = mysqli_fetch_assoc($result)){?>
+<!-- start thang -->
+<!--                     <div class="col-6 d-flex"> -->
+<!--                     <div class="box1"> -->
+<!--                     <div class="box-img me-4"> -->
+<!--                         <img src="../Images/<?php echo $row['Image']?>" alt="Ảnh" class="img-responsive"> -->
+<!--                     </div> -->
+<!--                     <div class="box-text1"> -->
+<!--                         <h6>   <?php echo $row['Title']?></h6> -->
+<!--                         <p style="color:#878787"><i class="fa fa-calendar" aria-hidden="true" style="color:#FF5F5D"></i>    <?php echo $row['CreatedAt']?></p> -->
+<!--                         <p style="color:#878787"><i class="fa fa-user" aria-hidden="true" style="color:#FF5F5D"></i>    <?php echo $row['UserName']?></p> -->
+                  <!--icon sửa     <p style="color:#878787"><i class="bi bi-pencil-square" aria-hidden="true" style="color:#FF5F5D;font-size: 1.25rem"></i>-->
+                   <!--icon xóa     <a href="delete.php?id=<?php echo $row['PostID'];?>" onclick="return confirm('Bạn chắc chắn muốn xóa?');" name="delete" style = "font-size: 1.25rem;float:right;color:#FF5F5D;margin-right:100px"><i class="bi bi-trash"></i></a>-->
+<!-- end thang -->
                     <div class="col-6 d-flex  pe-0">
                         <div class="box">
                             <div class="box-img  ">
@@ -152,6 +167,14 @@
                     <div class="box-img ">
                         <img src="../Images/<?php echo $row['Image']?>"  alt="Ảnh" class="img-responsive">
                     </div>
+<!-- thang -->
+<!--                     <div class="box-text"> -->
+<!--                         <h6><?php echo $row['Title']?></h6> -->
+<!--                         <p style="color:#878787"><i class="fa fa-calendar" aria-hidden="true" style="color:#FF5F5D"></i>  <?php echo $row['CreatedAt']?></p> -->
+<!--                         <p style="color:#878787"><i class="fa fa-user" aria-hidden="true" style="color:#FF5F5D"></i>  <?php echo $row['UserName']?></p> -->
+                      <!--icon sửa  <p style="color:#878787"><i class="bi bi-pencil-square" aria-hidden="true" style="color:#FF5F5D;font-size: 1.25rem"></i>--> 
+                     <!--icon xóa   <a href="delete.php?id=<?php echo $row['PostID'];?>" onclick="return confirm('Bạn chắc chắn muốn xóa?');" name="delete" style = "font-size: 1.25rem;float:right;color:#FF5F5D;margin-right:100px"><i class="bi bi-trash"></i></a>--> 
+<!--end thang -->
                     <div class="box-text " >
                         <h6 style="height:70px;"><?php echo $row['Title']?></h6>
                         <p style="color:#878787 "><i class="fa fa-calendar" aria-hidden="true" style="color:#FF5F5D"></i>  <?php echo $row['CreatedAt']?></p>
@@ -194,6 +217,10 @@
                         <h6><?php echo $row['Title']?></h6>
                         <p style="color:#878787"><i class="fa fa-calendar" aria-hidden="true" style="color:#FF5F5D"></i>  <?php echo $row['CreatedAt']?></p>
                         <p style="color:#878787"><i class="fa fa-user" aria-hidden="true" style="color:#FF5F5D"></i>  <?php echo $row['UserName']?></p>
+<!-- thang -->
+                    <!--icon sửa    <p style="color:#878787"><i class="bi bi-pencil-square" aria-hidden="true" style="color:#FF5F5D;font-size: 1.25rem"></i>--> 
+                     <!--icon xóa   <a href="delete.php?id=<?php echo $row['PostID'];?>" onclick="return confirm('Bạn chắc chắn muốn xóa?');" name="delete" style = "font-size: 1.25rem;float:right;color:#FF5F5D;margin-right:100px"><i class="bi bi-trash"></i></a>--> 
+<!--end thang  -->
                         <div class="row">
                             <div class="col-6 ">
                                 <a href="update-post.php?id=<?php echo $row['PostID']?>" class="float-end" style="color:#878787"><i class="fa fa-edit" aria-hidden="true" style="color:#FF5F5D"></i></a>
@@ -209,7 +236,6 @@
                <?php }
                 echo'</div>';
             }
-                            
                         ?>
                 <div class="clearfix"></div>
             </div>
