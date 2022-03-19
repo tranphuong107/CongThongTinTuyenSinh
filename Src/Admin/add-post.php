@@ -53,14 +53,14 @@
                             <div class="mb-3 col-7 pt-2 ">
                                 <label class=" me-4 "for="cars">Danh mục: </label>
                                 <select class ="p-2 border border-dark rounded-3 " name="txt-category" id="category">
-                                <option value="0" selected disabled hidden>Chọn danh mục</option>
+                                <option value="" selected disabled hidden>Chọn danh mục</option>
                                 <option value="Giới thiệu">Giới thiệu</option>
                                 <option value="Thông tin tuyển sinh">Thông tin tuyển sinh</option>
                                 <option value="Ngành đào tạo">Ngành đào tạo</option>
                                 </select>
                                 <div class="mb-3 col-7 mt-3">
                                 <div class="mb-3 py-2">
-                                    <label for="" class="form-label">Người tạo:</label>
+                                    <label for="" class="form-label">ID Người tạo:</label>
                                     <input type="text" class="form-control border border-dark" style="width:87%;" id="" name ="txt-userid">
                                 </div>
                             </div>

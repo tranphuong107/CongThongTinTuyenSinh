@@ -69,7 +69,7 @@
                                     <option value="Ngành đào tạo">Ngành đào tạo</option>
                                     </select>
                                     <div class="mb-3 py-2 mt-5">
-                                    <label for="" class="form-label">Người tạo:</label>
+                                    <label for="" class="form-label">ID Người sửa:</label>
                                     <input type="text" class="form-control border border-dark" style="width:47%;" id="" name ="txt-userid" value ="<?php echo $row['UserID'];?>">
                                 </div>
                                 </div>
