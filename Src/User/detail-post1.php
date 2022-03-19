@@ -42,17 +42,19 @@
             if(mysqli_num_rows($result) > 0){
                 
                 while($row = mysqli_fetch_assoc($result)){?>
-                <div class="container-fluid float-container " style=" ">
-                    <img src="https://tuyensinh.hce.edu.vn/wp-content/uploads/2019/02/Sequence-01.Still011.jpg" class="img-header " style="height: 300px; width:100% ;object-fit:cover;  background-color: rgb(255, 255, 255);"alt="">
-                    <div class="col-md-8 pt-4 float-img text-center " >
-                            <h1 class="text-white  text-align-center  "><?php echo $row['Title']?></h1>
+                <div class="container-fluid float-container " >
+                    <img src="https://tuyensinh.hce.edu.vn/wp-content/uploads/2019/02/Sequence-01.Still011.jpg" class="img-header " style="height: 250px; width:100% ;object-fit:cover;  background-color:rgb(255,255,255);" alt="">
+                    <div class="col-md-8 pt-4 float-img  "  >
+                            <h1 class="text-white "><?php echo $row['Title']?></h1>
+                            <div class=" text-white" ><?php echo $row['CreatedAt'] ?></div>
                     </div>
                 </div>
-    
     <div class="row mx-3">
         <div class="left-column my-4 col-6">
-        
-                    <?php echo '<div class="p-5">'.$row['Content'].'</div>';
+                    
+                    <?php 
+                    //echo '<div class="p-2">'.$row['CreatedAt'].'</div>';
+                    echo '<div class="p-5">'.$row['Content'].'</div>';
                         
                     }
                 }

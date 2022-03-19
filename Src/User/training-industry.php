@@ -34,7 +34,7 @@
     </ol>
     </nav>
 
-    <img src="../images/BG2.jpg" class="img-header " style="height: 500px; width:100% ;object-fit:cover;"alt="">
+    <img src="../images/BG7.jpg" class="img-header " style="height: 400px; width:100% ;object-fit:cover;"alt="">
     <div class="row mx-3">
         <?php
             $sql = "SELECT * FROM posts WHERE Category = N'Ngành đào tạo'";

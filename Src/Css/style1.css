@@ -4,19 +4,17 @@
     border: 1px solid grey;
     border-radius: 10px;
     text-align: center;
-    background-color: rgb(193, 202, 202);
+    background-color: #e5e4e2;
     width: 30%;
     margin: 10% auto;
     padding: 2%;
-    margin-bottom: 10px;
 }
 
-button{
-    width:280px;
+.btn{
+    width:120px;
     height:40px;
-    background-color: dodgerblue;
-    margin-bottom:25%;
-    
+    background-color: #007eb4;
+    color: white;
 }
 
 .container-fluid1{

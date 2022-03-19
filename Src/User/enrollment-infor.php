@@ -33,7 +33,7 @@
             <li class="breadcrumb-item active" aria-current="page"> <a style="text-decoration: none; color:darkgray" href="enrollment-infor.php">THÔNG TIN TUYỂN SINH</a></li>
         </ol>
     </nav>
-    <img src="../images/BG4.jpg" class="img-header " style="height: 500px; width:100% ;object-fit:cover;"alt="">
+    <img src="../images/BG6.jpg" class="img-header " style="height: 400px; width:100% ;object-fit:cover;"alt="">
     <div class="row mx-3">
     <?php
             $sql = "SELECT * FROM posts WHERE Category = N'Thông tin tuyển sinh'";
