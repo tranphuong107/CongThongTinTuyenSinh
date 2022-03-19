@@ -33,15 +33,6 @@
         float: left;
         height: 300px;
     }
-    .h4{
-        font-weight: 900;
-        font-size: 30px;
-        color:darkgrey;
-        text-align: center;
-        position: relative;
-        height:300px;
-        padding: 1%;
-    }
     .list-article{
         height: 0px;
         margin: 10px;
