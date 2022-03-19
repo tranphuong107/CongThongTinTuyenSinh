@@ -54,7 +54,7 @@
                         </div>';
                         echo'<div class="col-md-8">';
                         echo'  <div class="card-body">
-                                <a href="detail-post1.php?id'.$row['PostID'].'" class="my-text">'.$row['Title'].'</a>
+                                <a href="detail-post1.php?id='.$row['PostID'].'" class="my-text">'.$row['Title'].'</a>
                                 <p class="card-text">'.$row['CreatedAt'].'</p>
                                 <p class="card-content" >'.strip_tags(substr($row['Content'],0,180)).'</p>
                             </div>';

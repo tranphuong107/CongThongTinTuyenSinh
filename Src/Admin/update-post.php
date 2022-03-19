@@ -28,7 +28,7 @@
                                         <span class="text-admin ">Quản lý bài viết</span>
                                     </a></li>
                                 <li class="breadcrumb-item active text-admin">
-                                    <a href="add-post.php">
+                                    <a href="#">
                                         <span class="text-admin ">Sửa bài viết</span>
                                     </a></li>
                             </ol>
@@ -44,7 +44,7 @@
                 while($row = mysqli_fetch_assoc($result1)){?>
         <div class="row float-end col-md-8 my-2 mb-3 py-2 me-2  mx-auto" style="background-color:#ffffff; width:80%;">
                     <h4 class ="m-2 p-2 ms-3 mb-4 fw-bold">Sửa bài viết</h2>
-                    <form action ="process-update-post.php" method ="post" class=" mx-3 ps-5 rounded-3 " style =" border-radius: 30px">
+                    <form action ="process-update-post.php?id=<?php echo $_GET['id']?>"  method ="post" class=" mx-3 ps-5 rounded-3 " style =" border-radius: 30px">
                         <div class="row ">
                             <div class=" col-7 ">
                                 <label for="" class="form-label" style="position: relative;">ID bài viết:</label>
@@ -99,7 +99,7 @@
                             <div></div>
                             <div class="col-6"></div>
                             <div class="col-6 d-flex justify-content-center ">
-                            <button type="submit" class="btn  text-white px-5 fs-6  " style="background-color:#2e86de; margin-left:80px;" name ="btnadd">Lưu</button>
+                            <button type="submit" class="btn  text-white px-5 fs-6  " style="background-color:#2e86de; margin-left:80px;" name ="btnupdate">Lưu</button>
                             <a href="mng-article.php" class="btn  text-white px-5 fs-6 mx-5" style="background-color:#2e86de;" name ="btncancel">Hủy</a>
                             </div>
                         </div>

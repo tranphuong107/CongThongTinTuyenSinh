@@ -42,7 +42,7 @@
                         <nav aria-label="breadcrumb"  >
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item text-admin">
-                                    <a href="#">
+                                    <a href="index.php">
                                         <span class="">Trang chủ</span>
                                     </a></li>
                                 <li class="breadcrumb-item  text-admin">
@@ -57,10 +57,10 @@
                         </nav>  
                     </div>
         </div>
-        <div class="row float-end col-md-8 my-2 mb-3 py-2 me-2  mx-auto" style="background-color:#ffffff; width:80%; height: 1400px">
+        <div class="row float-end col-md-8 my-2 mb-3 py-2 me-2  mx-auto" style="background-color:#ffffff; width:80%; height: 100%">
             <div class="">
                 <div class="">
-                    <h4 class ="m-2 p-2 ms-3 mb-3 fw-bold"><img src="https://img.icons8.com/ios/30/000000/edit-property.png"/></i>  Danh sách bài viết</h2>
+                    <h4 class ="m-2 p-2 ms-3 fw-bold"><img src="https://img.icons8.com/ios/30/000000/edit-property.png"/></i>  Danh sách bài viết</h2>
                 </div>
                 <div class=" p-3 ">
                     <form action="" method ="post">

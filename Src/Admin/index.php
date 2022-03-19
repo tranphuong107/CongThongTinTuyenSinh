@@ -19,7 +19,7 @@
                         </nav>  
                     </div>
         </div>
-        <div class="row float-end col-md-8 my-2 mb-3 py-2 me-2  mx-auto" style="background-color:#ffffff; width:80%; height: 800px">
+        <div class="row float-end col-md-8 my-2 mb-3 py-2 me-2  mx-auto" style="background-color:#ffffff; width:80%; height: 540px">
             <div class="main-content" style="margin: 5%" >
             <div class="main-content-item">
             <?php

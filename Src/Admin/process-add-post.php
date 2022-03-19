@@ -26,7 +26,7 @@
             mysqli_close($conn);
         }
         else{
-                header ("location:add-post.php?Vui lòng nhập đủ dữ liệu");
+                header ("location:add-post.php?id =Vui lòng nhập đủ dữ liệu");
         }
     }
 ?>
