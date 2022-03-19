@@ -13,26 +13,19 @@
                                         <span class="">Trang chủ</span>
                                     </a></li>
                                 <li class="breadcrumb-item text-admin ">
-                                    <a href="mng-account.php">
-                                        <span class=" ">Quản lý tài khoản</span>
+                                    <a href="list-can.php">
+                                        <span class=" ">Danh sách thí sinh</span>
                                     </a></li>
                             </ol>
                         </nav>  
                     </div>
         </div>
-        <div class="row float-end col-md-8 my-2  py-2 me-2  " style="background-color:#ffffff; width:80%; height:550px" >
-                <div class="col-6">
-                    <h4 class ="m-2 p-2 ms-3 fw-bold"><img src="https://img.icons8.com/ios/30/000000/edit-property.png"/></i> Danh sách tài khoản quản trị</h2>
+        <div class="row float-end col-md-8 my-2  py-2 me-2  mx-auto" style="background-color:#ffffff; width:80%; height: 550px;">
+                <div class="">
+                    <h4 class ="m-2 p-2 ms-3 fw-bold"><img src="https://img.icons8.com/ios/30/000000/edit-property.png"/></i> Danh sách thí sinh</h2>
                 </div>
-                <div class="them col-6">
-                    <a href="add-admin.php"class=""style = "font-size: 2.5rem;float:right;"><i class="bi bi-plus-square"style="color: green"></i></a>
-                </div>
-                
-                
-            <main>
+        <main>
             <style>
-
-
             .btn-outline-success{
                 width: 70px;
                 height: 40px;
@@ -43,6 +36,7 @@
                     margin-top: 0%;
                     border:1px solid white;
                     background-color: white;
+                    width
                 }
                 .container-search{
                     padding:0%;
@@ -57,16 +51,12 @@
                                     <thead>
                                         <tr> 
                                             <th scope ="col">Mã</th>
-                                            <th scope ="col">Tên người dùng</th>
-                                            <th scope ="col">Họ và tên</th>
-                                            <th scope ="col">Email</th>
+                                            <th scope ="col">Tên thí sinh</th>
+                                            <th scope ="col">Giới tính</th>
+                                            <th scope ="col">Ngày Sinh</th>
                                             <th scope ="col">Số điện thoại</th>   
-                                            <th scope ="col">Loại tài khoản</th>
-                                            <th scope ="col">Trạng thái</th> 
-                                            <th scope ="col">Xóa tài khoản</th>                   
-                                        
+                                            <th scope ="col">Email</th>
                                         </tr>
-                                    
                                     </thead>
                             </div>
                         
@@ -75,22 +65,18 @@
                         <?php
                             
                                 // Bước 02: Thực hiện TRUY VẤN
-                                $sql    = "SELECT*FROM users where Status ='Hoạt động'";
+                                $sql    = "SELECT*FROM candidates";
                                 $result = mysqli_query($conn,$sql); //Lưu kết quả trả về vào result
                                 // Bước 03: Phân tích và xử lý kết quả
                                 if(mysqli_num_rows($result)>0){
                                 while($row=mysqli_fetch_assoc($result)){
                                     echo '<tr>';
-                                    echo '<th scope="row">'.$row['UserID'].'</th>';
-                                    echo '<td>'.$row['UserName'].'</td>';
-                                    echo '<td>'.$row['FullName'].'</td>';
-                                    echo '<td>'.$row['Email'].'</td>';
+                                    echo '<th scope="row">'.$row['CanID'].'</th>';
+                                    echo '<td>'.$row['CanName'].'</td>';
+                                    echo '<td>'.$row['Gender'].'</td>';
+                                    echo '<td>'.$row['DateOfBirth'].'</td>';
                                     echo '<td>'.$row['PhoneNumber'].'</td>';
-                                    echo '<td>'.$row['Types'].'</td>';
-                                    echo '<td>'.$row['Status'].'</td>';
-                                    echo'<td>
-                                    <a href="delete-admin.php?id='.$row['UserID'].'";><i class="fa fa-trash"></i></a>
-                                    </td>';
+                                    echo '<td>'.$row['Email'].'</td>';
                                     echo '</tr>';
                                 }
                             }

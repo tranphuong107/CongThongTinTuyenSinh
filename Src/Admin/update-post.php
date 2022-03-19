@@ -89,7 +89,7 @@
                             <div class=" ">
                                 <div class="mb-3 noidung ms-4">
                                     <label for="" class="form-label" style="margin-left:-20px;">Nội dung:</label>
-                                    <textarea type="" class="form-control border ms-5 border-dark ps-3" style="height:150px; width:100%;" id="summernote" name ="txt-content" <?php echo $row['Content'];?>></textarea>
+                                    <textarea type="" class="form-control border ms-5 border-dark ps-3" style="height:150px; width:100%;" id="summernote" name ="txt-content" ><?php echo $row['Content'];?></textarea>
                                 
                                 </div>
                             </div>

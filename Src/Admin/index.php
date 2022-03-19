@@ -19,32 +19,46 @@
                         </nav>  
                     </div>
         </div>
-        <div class="row float-end col-md-8 my-2 mb-3 py-2 me-2  mx-auto" style="background-color:#ffffff; width:80%; height: 540px">
-            <div class="main-content" style="margin: 5%" >
-            <div class="main-content-item">
-            <?php
-            //sql query
-            $sql = "SELECT * FROM posts";
-            //Execute Query
-            $res = mysqli_query($conn, $sql);
-            //Count Rows
-            $count = mysqli_num_rows($res);
-            ?>
-                <h1><?php echo $count; ?></h1>
-                <span class="item-desc">BÀI VIẾT</span>
+        <div class="row float-end col-md-8 my-2  py-2 me-2  mx-auto" style="background-color:#ffffff; width:80%; height: 540px">
+            <div class="main-content row" style="margin: 5% 0" >
+                <div class="main-content-item">
+                <?php
+                //sql query
+                $sql = "SELECT * FROM posts";
+                //Execute Query
+                $res = mysqli_query($conn, $sql);
+                //Count Rows
+                $count = mysqli_num_rows($res);
+                ?>
+                    <h1><?php echo $count; ?></h1>
+                    <span class="item-desc">BÀI VIẾT</span>
+                </div>
+                <div class="main-content-item">
+                    <?php
+                    //sql query
+                    $sql = "SELECT * FROM users";
+                    //Execute Query
+                    $res = mysqli_query($conn, $sql);
+                    //Count Rows
+                    $count = mysqli_num_rows($res);
+                    ?>
+                    <h1><?php echo $count; ?></h1>
+                    <span class="item-desc">TÀI KHOẢN</span>
+                </div> 
             </div>
-            <div class="main-content-item">
-            <?php
-            //sql query
-            $sql = "SELECT * FROM users";
-            //Execute Query
-            $res = mysqli_query($conn, $sql);
-            //Count Rows
-            $count = mysqli_num_rows($res);
-            ?>
-                <h1><?php echo $count; ?></h1>
-                <span class="item-desc">TÀI KHOẢN</span>
-            </div> 
+            <div class=" row " style="margin: 5% 0; padding-left:13%;" >
+                <div class="main-content-item col-6">
+                    <?php
+                    //sql query
+                    $sql = "SELECT * FROM candidates";
+                    //Execute Query
+                    $res = mysqli_query($conn, $sql);
+                    //Count Rows
+                    $count = mysqli_num_rows($res);
+                    ?>
+                    <h1><?php echo $count; ?></h1>
+                    <span class="item-desc">THÍ SINH</span>
+                </div> 
             </div>
         </div>
 <?php

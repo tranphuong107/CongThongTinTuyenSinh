@@ -32,7 +32,7 @@
           position: fixed;
           left: 0;
           width: 230px;
-          height: 200px;
+          height: 270px;
           background-color: white;
           margin-top: 17px;
           margin-left: 16px;
@@ -92,7 +92,8 @@
       <ul>
         <li><a href="index.php"></i><span>Trang chủ</span></a></li> 
         <li><a href="mng-article.php"></i><span>Quản lý bài viết</span></a></li>
-        <li><a href="mng-account.php" style="border-bottom: none;"></i><span>Quản lý tài khoản</span></a></li>
-      </ul>
+        <li><a href="mng-account.php"></i><span>Quản lý tài khoản</span></a></li>
+        <li><a href="list-can.php" style="border-bottom: none;"></i><span>Danh sách thí sinh</span></a></li>
+    </ul>
 </div>
 <!-- sidebar end -->

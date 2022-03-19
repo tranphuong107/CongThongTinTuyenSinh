@@ -4,15 +4,15 @@
 <?php
         if(isset($_POST['btnupdate']))
         {
-            $post_id = $_GET['id'];
-            $category = $_POST['txt-category'];
-            $title = $_POST['txt-title'];
-            $content = $_POST['txt-content'];
-            date_default_timezone_set('Asia/Ho_Chi_Minh');
-            $CreatedAt = date('Y/m/d H:i:s');
-            $image =$_POST['txt-image']; 
-            $user_id = $_POST['txt-userid'];
-            if(!empty($title) && !empty($content) && !empty($user_id)){//kiểm tra có nhập đủ tt k
+            if(!empty($_POST['txt-title']) && !empty($_POST['txt-content']) && !empty($_POST['txt-userid'])){//kiểm tra có nhập đủ tt k
+                $post_id = $_GET['id'];
+                $category = $_POST['txt-category'];
+                $title = $_POST['txt-title'];
+                $content = $_POST['txt-content'];
+                date_default_timezone_set('Asia/Ho_Chi_Minh');
+                $CreatedAt = date('Y/m/d H:i:s');
+                $image =$_POST['txt-image']; 
+                $user_id = $_POST['txt-userid'];
                 if($_POST['txt-image']!=''){//ktra có thay đổi ảnh k
                     //chỉnh sửa thông tin
                     $sql1 = "UPDATE posts SET 
@@ -48,7 +48,11 @@
                     }
                 }
             }else{
-                header ("location:update-post.php?id=".$_GET['id']."?Vui lòng nhập đủ dữ liệu");
+                echo '<script>';
+                echo 'alert ("Vui lòng nhập đủ dữ liệu!");';
+                echo "location.href = 'update-post.php?id=".$_GET['id']."';";     
+                echo '</script>';
+                // header ("location:update-post.php?id=".$_GET['id']."?Vui lòng nhập đủ dữ liệu");
             }
         }
         
