@@ -86,7 +86,7 @@
             </div>
             <div class="list-article">
                 <div class="">
-                    <h5><a href="#" style="color: #000000"></i><span>Kết quả tìm kiếm bài viết <?php if(isset($_GET['search'])) {echo $_GET['search'];}?></span></a></h5>
+                    <h5><a href="#" style="color: #000000"></i><span>Kết quả tìm kiếm bài viết: "<?php if(isset($_GET['search'])) {echo $_GET['search'];}?>"</span></a></h5>
                 <?php
                 if(mysqli_num_rows($result) > 0){
                 echo'<div class="row row-cols-1 row-cols-md-3 g-5  px-4 pb-5">';
