@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th3 15, 2022 lúc 04:00 PM
+-- Thời gian đã tạo: Th3 17, 2022 lúc 03:04 PM
 -- Phiên bản máy phục vụ: 10.4.21-MariaDB
 -- Phiên bản PHP: 8.0.10
 
@@ -20,6 +20,52 @@ SET time_zone = "+00:00";
 --
 -- Cơ sở dữ liệu: `admissions_portal`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `aspirations`
+--
+
+CREATE TABLE `aspirations` (
+  `AspID` int(10) UNSIGNED NOT NULL,
+  `Majors` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `Subject` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `CanID` int(10) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `candidates`
+--
+
+CREATE TABLE `candidates` (
+  `CanID` int(10) UNSIGNED NOT NULL,
+  `CanName` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `Gender` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `DateOfBirth` date NOT NULL,
+  `BirthPlace` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `IC` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `PhoneNumber` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `Email` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `SchoolAddress` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `SchoolName` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `GraduationYear` int(4) NOT NULL,
+  `SumScore` decimal(4,2) NOT NULL,
+  `Conduct` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `Maths` decimal(4,2) NOT NULL,
+  `Literature` decimal(4,2) NOT NULL,
+  `English` decimal(4,2) NOT NULL,
+  `Physics` decimal(4,2) NOT NULL,
+  `Chemistry` decimal(4,2) NOT NULL,
+  `Biology` decimal(4,2) NOT NULL,
+  `History` decimal(4,2) NOT NULL,
+  `Geography` decimal(4,2) NOT NULL,
+  `ImgSchoolPro` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `FrontPhotoIC` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `BackPhotoIC` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -83,6 +129,19 @@ INSERT INTO `users` (`UserID`, `UserName`, `Password`, `FullName`, `Email`, `Pho
 --
 
 --
+-- Chỉ mục cho bảng `aspirations`
+--
+ALTER TABLE `aspirations`
+  ADD PRIMARY KEY (`AspID`),
+  ADD KEY `CanID` (`CanID`);
+
+--
+-- Chỉ mục cho bảng `candidates`
+--
+ALTER TABLE `candidates`
+  ADD PRIMARY KEY (`CanID`);
+
+--
 -- Chỉ mục cho bảng `posts`
 --
 ALTER TABLE `posts`
@@ -100,6 +159,18 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT cho bảng `aspirations`
+--
+ALTER TABLE `aspirations`
+  MODIFY `AspID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT cho bảng `candidates`
+--
+ALTER TABLE `candidates`
+  MODIFY `CanID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT cho bảng `posts`
 --
 ALTER TABLE `posts`
@@ -114,6 +185,12 @@ ALTER TABLE `users`
 --
 -- Các ràng buộc cho các bảng đã đổ
 --
+
+--
+-- Các ràng buộc cho bảng `aspirations`
+--
+ALTER TABLE `aspirations`
+  ADD CONSTRAINT `aspirations_ibfk_1` FOREIGN KEY (`CanID`) REFERENCES `candidates` (`CanID`);
 
 --
 -- Các ràng buộc cho bảng `posts`
