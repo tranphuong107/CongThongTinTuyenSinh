@@ -19,7 +19,7 @@
     <nav class= "bg-white px-3 py-1 my-1 text-align-center" style="height: 40px;"aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a style="text-decoration: none; color:darkgray" href="index.php">TRANG CHỦ</a></li>
-        <li class="breadcrumb-item active" aria-current="page"> <a style="text-decoration: none; color:darkgray" href="training-industry.php">ĐĂNG KÍ XÉT TUYỂN</a></li>
+        <li class="breadcrumb-item active" aria-current="page"> <a style="text-decoration: none; color:darkgray" href="register.php">ĐĂNG KÍ XÉT TUYỂN</a></li>
     </ol>
     </nav>
 <form action="" class = "bg-white p-5">
