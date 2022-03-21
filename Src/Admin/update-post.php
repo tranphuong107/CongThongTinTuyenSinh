@@ -100,7 +100,7 @@
                             <div class="col-6"></div>
                             <div class="col-6 d-flex justify-content-center ">
                             <button type="submit" class="btn  text-white px-5 fs-6  " style="background-color:#2e86de; margin-left:80px;" name ="btnupdate">Lưu</button>
-                            <a href="mng-article.php" class="btn  text-white px-5 fs-6 mx-5" style="background-color:#2e86de;" name ="btncancel">Hủy</a>
+                            <a href="mng-article.php" class="btn  text-white px-5 fs-6 mx-5" style="background-color:#2e86de;" onclick="return confirm('Bạn chắc chắn muốn thoát không?');" name ="btncancel">Hủy</a>
                             </div>
                         </div>
                     </form>
