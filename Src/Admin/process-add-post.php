@@ -3,13 +3,34 @@
     if(isset($_POST['btnadd']))
     {
         
-        if(!empty($_POST['txt-title']) && !empty($_POST['txt-content']) && !empty($_POST['txt-userid'])
-        && !empty($_POST['txt-image'])&& !empty($_POST['txt-category'])){
+        // if(!empty($_POST['txt-title']) && !empty($_POST['txt-content']) && !empty($_POST['txt-userid'])
+        // && !empty($_POST['txt-image'])&& !empty($_POST['txt-category'])){
+        if (empty($_POST['txt-title'])) {
+            header("Location:add-post.php?error=Tiêu đề là bắt buộc!");
+            exit();
+        }else if(empty($_POST['txt-category'])){
+            header("Location:add-post.php?error=Danh mục là bắt buộc!");
+            exit();
+        }else if(empty($_POST['txt-userid'])){
+            header("Location:add-post.php?error=ID người tạo là bắt buộc!");
+            exit();
+        }else if(empty($_POST['txt-image'])){
+            header("Location:add-post.php?error=Ảnh là bắt buộc!");
+            exit();
+        }else if(empty($_POST['txt-content'])){
+            header("Location:add-post.php?error=Nội dung là bắt buộc!");
+            exit();
+        }else{
             if(!is_numeric($_POST['txt-userid'])){
-                echo '<script>';
-                echo 'alert ("ID người tạo phải là số!");';
-                echo "location.href = 'add-post.php';";     
-                echo '</script>';
+                header("Location:add-post.php?error=ID người tạo phải là số!");
+                exit();   
+            }else 
+                $userid = $_POST['txt-userid'];
+                $kiemtra = "SELECT * from users where UserID = '$userid'";
+                $result0 = mysqli_query($conn,$kiemtra);
+                if(!mysqli_fetch_array( $result0)){
+                header("Location:add-post.php?error=ID người tạo không tồn tại!");
+                exit();
             }else{
                 $category =$_POST['txt-category'];
                 $title =$_POST['txt-title'];
@@ -34,12 +55,12 @@
                 mysqli_close($conn);
             }
         }
-        else{
-                echo '<script>';
-                echo 'alert ("Vui lòng nhập đủ dữ liệu!");';
-                echo "location.href = 'add-post.php';";     
-                echo '</script>';
-                // header ("location:add-post.php?id =Vui lòng nhập đủ dữ liệu");
-        }
+        // else{
+        //         echo '<script>';
+        //         echo 'alert ("Vui lòng nhập đủ dữ liệu!");';
+        //         echo "location.href = 'add-post.php';";     
+        //         echo '</script>';
+        //         // header ("location:add-post.php?id =Vui lòng nhập đủ dữ liệu");
+        // }
     }
 ?>

@@ -4,12 +4,30 @@
 <?php
         if(isset($_POST['btnupdate']))
         {
-            if(!empty($_POST['txt-title']) && !empty($_POST['txt-content']) && !empty($_POST['txt-userid'])){//kiểm tra có nhập đủ tt k
+            // if(!empty($_POST['txt-title']) && !empty($_POST['txt-content']) && !empty($_POST['txt-userid'])){//kiểm tra có nhập đủ tt k
+            if (empty($_POST['txt-title'])) {
+                 header("Location:update-post.php?id=".$_GET['id']."&error=Tiêu đề là bắt buộc!");
+                exit();
+            }else if(empty($_POST['txt-content'])){
+                header("Location:update-post.php?id=".$_GET['id']."&error=Nội dung là bắt buộc!");
+                exit();
+            }else if(empty($_POST['txt-category'])){
+                header("Location:update-post.php?id=".$_GET['id']."&error=Danh mục là bắt buộc!");
+                exit();
+            }else if(empty($_POST['txt-userid'])){
+                header("Location:update-post.php?id=".$_GET['id']."&error=ID người sửa là bắt buộc!");
+                exit();
+            }else{
                 if(!is_numeric($_POST['txt-userid'])){
-                    echo '<script>';
-                    echo 'alert ("ID người tạo phải là số!");';
-                    echo "location.href = 'update-post.php?id=".$_GET['id']."';";      
-                    echo '</script>';
+                    header("Location:update-post.php?id=".$_GET['id']."&error=ID người sửa phải là số!");
+                    exit();
+                }else 
+                    $userid = $_POST['txt-userid'];
+                    $kiemtra = "SELECT * from users where UserID = '$userid'";
+                    $result0 = mysqli_query($conn,$kiemtra);
+                    if(!mysqli_fetch_array( $result0)){
+                    header("Location:update-post.php?id=".$_GET['id']."&error=ID người sửa không tồn tại!");
+                    exit();
                 }else{
                     $post_id = $_GET['id'];
                     $category = $_POST['txt-category'];
@@ -54,13 +72,14 @@
                         }
                     }
                 }
-            }else{
-                echo '<script>';
-                echo 'alert ("Vui lòng nhập đủ dữ liệu!");';
-                echo "location.href = 'update-post.php?id=".$_GET['id']."';";     
-                echo '</script>';
-                // header ("location:update-post.php?id=".$_GET['id']."?Vui lòng nhập đủ dữ liệu");
             }
+            // }else{
+            //     echo '<script>';
+            //     echo 'alert ("Vui lòng nhập đủ dữ liệu!");';
+            //     echo "location.href = 'update-post.php?id=".$_GET['id']."';";     
+            //     echo '</script>';
+            //     // header ("location:update-post.php?id=".$_GET['id']."?Vui lòng nhập đủ dữ liệu");
+            // }
         }
         
     ?>
