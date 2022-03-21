@@ -3,8 +3,8 @@
  include ('../config.php');
         if(isset($_GET['btn-search']) && !empty($_GET['search'])){
             $keyword=$_GET['search'];
-            $sql="SELECT * FROM posts,users WHERE posts.PostID LIKE '%$keyword%'OR posts.Title LIKE '%$keyword%'OR posts.CreatedAt LIKE '%$keyword%' OR users.UserName LiKE '%$keyword%' 
-            And posts.UserID=users.UserID";  
+            $sql="SELECT * FROM posts p,users u WHERE p.UserID = u.UserID And
+             p.Title LIKE '%$keyword%'";  
         }else{
             header("location: mng-article.php");
         }
@@ -82,17 +82,23 @@
                 if(mysqli_num_rows($result) > 0){
                 echo'<div class="row row-cols-1 row-cols-md-3 g-5  px-4 pb-5">';
                 while($row = mysqli_fetch_assoc($result)){?>
-                    <div class="col-6 d-flex">
-                    <div class="box1">
-                    <div class="box-img me-4">
+                    <div class="col-6 d-flex ">
+                    <div class="box">
+                    <div class="box-img pe-3">
                         <img src="../Images/<?php echo $row['Image']?>" alt="Ảnh" class="img-responsive">
                     </div>
-                    <div class="box-text1">
-                        <h6> <?php echo $row['Title']?></h6>
-                        <p style="color:#878787"><i class="fa fa-calendar" aria-hidden="true" style="color:#FF5F5D"></i>    <?php echo $row['CreatedAt']?></p>
-                        <p style="color:#878787"><i class="fa fa-user" aria-hidden="true" style="color:#FF5F5D"></i><?php echo $row['UserName']?></p>
-                        <p style="color:#878787"><i class="bi bi-pencil-square" aria-hidden="true" style="color:#FF5F5D;font-size: 1.25rem"></i>
-                        <a href="delete.php?id=<?php echo $row['PostID'];?>" onclick="return confirm('Bạn chắc chắn muốn xóa?');" name="delete" style = "font-size: 1.25rem;float:right;color:#FF5F5D;margin-right:100px"><i class="bi bi-trash"></i></a>
+                    <div class="box-text">
+                        <h6 style="height:70px;"> <?php echo $row['Title']?></h6>
+                        <p class="mb-1"style="color:#878787"><i class="fa fa-calendar " aria-hidden="true" style="color:#FF5F5D"></i>    <?php echo $row['CreatedAt']?></p>
+                        <p style="color:#878787"><i class="fa fa-user pe-1 pt-1" aria-hidden="true" style="color:#FF5F5D"></i><?php echo $row['UserName']?></p>
+                        <div class="row">
+                                    <div class="col-6 ">
+                                        <a href="update-post.php?id=<?php echo $row['PostID']?>" class="float-end" style="color:#878787"><i class="fa fa-edit" aria-hidden="true" style="color:#FF5F5D"></i></a>
+                                    </div>
+                                    <div class="col-6">
+                                        <a href="delete.php?id=<?php echo $row['PostID'];?>" onclick="return confirm('Bạn chắc chắn muốn xóa?');" name="delete" style="color:#878787"><i class="fa fa-trash-alt" aria-hidden="true" style="color:#FF5F5D"></i></a>
+                                    </div>
+                        </div>
                     </div>
                 </div>
                 </div>
