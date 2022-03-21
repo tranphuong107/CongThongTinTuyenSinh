@@ -86,18 +86,9 @@
             if(mysqli_num_rows($result) > 0){
                 echo'<div class="row row-cols-1 row-cols-md-3 g-5  px-4 pb-5">';
                 while($row = mysqli_fetch_assoc($result)){?>
-<!-- start thang -->
-<!--                     <div class="col-6 d-flex"> -->
-<!--                     <div class="box1"> -->
-<!--                     <div class="box-img me-4"> -->
-<!--                         <img src="../Images/<?php echo $row['Image']?>" alt="Ảnh" class="img-responsive"> -->
-<!--                     </div> -->
-<!--                     <div class="box-text1"> -->
-<!--                         <h6>   <?php echo $row['Title']?></h6> -->
-<!--                         <p style="color:#878787"><i class="fa fa-calendar" aria-hidden="true" style="color:#FF5F5D"></i>    <?php echo $row['CreatedAt']?></p> -->
-<!--                         <p style="color:#878787"><i class="fa fa-user" aria-hidden="true" style="color:#FF5F5D"></i>    <?php echo $row['UserName']?></p> -->
+<!-- start thang -->            
                   <!--icon sửa     <p style="color:#878787"><i class="bi bi-pencil-square" aria-hidden="true" style="color:#FF5F5D;font-size: 1.25rem"></i>-->
-                   <!--icon xóa     <a href="delete.php?id=<?php echo $row['PostID'];?>" onclick="return confirm('Bạn chắc chắn muốn xóa?');" name="delete" style = "font-size: 1.25rem;float:right;color:#FF5F5D;margin-right:100px"><i class="bi bi-trash"></i></a>-->
+                   <!--icon xóa     <a href="delete.php?id=" onclick="return confirm('Bạn chắc chắn muốn xóa?');" name="delete" style = "font-size: 1.25rem;float:right;color:#FF5F5D;margin-right:100px"><i class="bi bi-trash"></i></a>-->
 <!-- end thang -->
                     <div class="col-6 d-flex  pe-0">
                         <div class="box">
@@ -113,7 +104,7 @@
                                         <a href="update-post.php?id=<?php echo $row['PostID']?>" class="float-end" style="color:#878787"><i class="fa fa-edit" aria-hidden="true" style="color:#FF5F5D"></i></a>
                                     </div>
                                     <div class="col-6">
-                                        <a href="#" style="color:#878787"><i class="fa fa-trash-alt" aria-hidden="true" style="color:#FF5F5D"></i></a>
+                                        <a href="delete.php?id=<?php echo $row['PostID'];?>" onclick="return confirm('Bạn chắc chắn muốn xóa?');" name="delete" style="color:#878787"><i class="fa fa-trash-alt" aria-hidden="true" style="color:#FF5F5D"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -168,12 +159,8 @@
                         <img src="../Images/<?php echo $row['Image']?>"  alt="Ảnh" class="img-responsive">
                     </div>
 <!-- thang -->
-<!--                     <div class="box-text"> -->
-<!--                         <h6><?php echo $row['Title']?></h6> -->
-<!--                         <p style="color:#878787"><i class="fa fa-calendar" aria-hidden="true" style="color:#FF5F5D"></i>  <?php echo $row['CreatedAt']?></p> -->
-<!--                         <p style="color:#878787"><i class="fa fa-user" aria-hidden="true" style="color:#FF5F5D"></i>  <?php echo $row['UserName']?></p> -->
                       <!--icon sửa  <p style="color:#878787"><i class="bi bi-pencil-square" aria-hidden="true" style="color:#FF5F5D;font-size: 1.25rem"></i>--> 
-                     <!--icon xóa   <a href="delete.php?id=<?php echo $row['PostID'];?>" onclick="return confirm('Bạn chắc chắn muốn xóa?');" name="delete" style = "font-size: 1.25rem;float:right;color:#FF5F5D;margin-right:100px"><i class="bi bi-trash"></i></a>--> 
+                     <!--icon xóa   <a href="delete.php?id=" onclick="return confirm('Bạn chắc chắn muốn xóa?');" name="delete" style = "font-size: 1.25rem;float:right;color:#FF5F5D;margin-right:100px"><i class="bi bi-trash"></i></a>--> 
 <!--end thang -->
                     <div class="box-text " >
                         <h6 style="height:70px;"><?php echo $row['Title']?></h6>
@@ -184,7 +171,7 @@
                                 <a href="update-post.php?id=<?php echo $row['PostID']?>" class="float-end" style="color:#878787"><i class="fa fa-edit" aria-hidden="true" style="color:#FF5F5D"></i></a>
                             </div>
                             <div class="col-6">
-                                <a href="#" style="color:#878787"><i class="fa fa-trash-alt" aria-hidden="true" style="color:#FF5F5D"></i></a>
+                                <a href="delete.php?id=<?php echo $row['PostID'];?>" onclick="return confirm('Bạn chắc chắn muốn xóa?');" name="delete" style="color:#878787"><i class="fa fa-trash-alt" aria-hidden="true" style="color:#FF5F5D"></i></a>
                             </div>
                         </div>
                     </div>
@@ -219,14 +206,14 @@
                         <p style="color:#878787"><i class="fa fa-user" aria-hidden="true" style="color:#FF5F5D"></i>  <?php echo $row['UserName']?></p>
 <!-- thang -->
                     <!--icon sửa    <p style="color:#878787"><i class="bi bi-pencil-square" aria-hidden="true" style="color:#FF5F5D;font-size: 1.25rem"></i>--> 
-                     <!--icon xóa   <a href="delete.php?id=<?php echo $row['PostID'];?>" onclick="return confirm('Bạn chắc chắn muốn xóa?');" name="delete" style = "font-size: 1.25rem;float:right;color:#FF5F5D;margin-right:100px"><i class="bi bi-trash"></i></a>--> 
+                     <!--icon xóa   <a href="delete.php?id= onclick="return confirm('Bạn chắc chắn muốn xóa?');" name="delete" style = "font-size: 1.25rem;float:right;color:#FF5F5D;margin-right:100px"><i class="bi bi-trash"></i></a>--> 
 <!--end thang  -->
                         <div class="row">
                             <div class="col-6 ">
                                 <a href="update-post.php?id=<?php echo $row['PostID']?>" class="float-end" style="color:#878787"><i class="fa fa-edit" aria-hidden="true" style="color:#FF5F5D"></i></a>
                             </div>
                             <div class="col-6">
-                                <a href="#" style="color:#878787"><i class="fa fa-trash-alt" aria-hidden="true" style="color:#FF5F5D"></i></a>
+                                <a href="delete.php?id=<?php echo $row['PostID'];?>" onclick="return confirm('Bạn chắc chắn muốn xóa?');" name="delete" style="color:#878787"><i class="fa fa-trash-alt" aria-hidden="true" style="color:#FF5F5D"></i></a>
                             </div>
                         </div>
                     </div>
