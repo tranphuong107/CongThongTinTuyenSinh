@@ -36,12 +36,15 @@
                     </div>
         </div>
         <div class="row float-end col-md-8 my-2 mb-3 py-2 me-2  mx-auto" style="background-color:#ffffff; width:80%;">
-                    <h4 class ="m-2 p-2 ms-3 mb-4 fw-bold">Thêm bài viết</h2>
+                    <h4 class ="m-2 p-2 ms-3 mb-4 fw-bold">Thêm bài viết</h4>
+                    <?php if (isset($_GET['error'])) { ?>
+                        <h6 class="text-center" style="color:red;"><?php echo $_GET['error']; ?></h6>
+                    <?php } ?>
                     <form action ="process-add-post.php" method ="post" class=" mx-3 ps-5 rounded-3 " style =" border-radius: 30px">
                         <div class="row ">
                             <div class="mb-3 col-7 ">
                                 <label for="" class="form-label">Tiêu đề:</label>
-                                <input type="text" class="form-control border border-dark me-4" style="width:87%;" id="" name ="txt-title">
+                                <input type="text" class="form-control border border-dark me-4" style="width:87%;" id="" name ="txt-title" >
                             </div>
 
                             <div class="col-5">
@@ -87,7 +90,7 @@
                             <div class="col-6"></div>
                             <div class="col-6 d-flex justify-content-center ">
                             <button type="submit" class="btn  text-white px-5 fs-6  " style="background-color:#2e86de; margin-left:80px;" name ="btnadd">Lưu</button>
-                            <a href="mng-article.php" class="btn  text-white px-5 fs-6 mx-5" style="background-color:#2e86de;" name ="btncancel">Hủy</a>
+                            <a href="mng-article.php" class="btn  text-white px-5 fs-6 mx-5" style="background-color:#2e86de;"onclick="return confirm('Bạn chắc chắn muốn thoát không?');" name ="btncancel">Hủy</a>
                             </div>
                         </div>
                     </form>

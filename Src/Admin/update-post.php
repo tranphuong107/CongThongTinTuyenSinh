@@ -44,17 +44,19 @@
                 while($row = mysqli_fetch_assoc($result1)){?>
         <div class="row float-end col-md-8 my-2 mb-3 py-2 me-2  mx-auto" style="background-color:#ffffff; width:80%;">
                     <h4 class ="m-2 p-2 ms-3 mb-4 fw-bold">Sửa bài viết</h2>
+                    <?php if (isset($_GET['error'])) { ?>
+                        <h6 class="text-center" style="color:red;"><?php echo $_GET['error']; ?></h6>
+                    <?php } ?>
                     <form action ="process-update-post.php?id=<?php echo $_GET['id']?>"  method ="post" class=" mx-3 ps-5 rounded-3 " style =" border-radius: 30px">
                         <div class="row ">
                             <div class=" col-7 ">
                                 <label for="" class="form-label" style="position: relative;">ID bài viết:</label>
-                                <input type="text" class="form-control border border-dark me-4" disabled style="width:4%;margin-left:8%;top:171px; position: absolute;" id="" name ="txt-title" value = "<?php echo $row['PostID'];?>">
+                                <input type="text" class="form-control border border-dark me-4" disabled style="width:9%;margin-left:15%;bottom:37px; position: relative;" id="" name ="txt-title" value = "<?php echo $row['PostID'];?>">
                                 <div class="mt-4 col-7 ">
                                     <label for="" class="form-label">Tiêu đề:</label>
                                     <input type="text" class="form-control border border-dark me-4" style="width:525px;" id="" name ="txt-title" value = "<?php echo $row['Title'];?>">
                                 </div>
                             </div>
-
                             <div class="col-5 mb-3">
                                 <div  class = " text-begin pb-2 ">Hình ảnh hiện tại: </div> 
                                 <img src="../Images/<?php echo $row['Image']?>" alt=""  style = "width:200px; height:150px;">
