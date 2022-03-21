@@ -27,7 +27,7 @@
         </li>   
         <li class="nav-item">
                 <a class="nav-link" href="register.php">ĐĂNG KÍ XÉT TUYỂN</a>
-            </li>
+        </li>
     </ul>
 
     <nav class= "bg-white px-3 py-1 my-1 text-align-center" style="height: 40px;" aria-label="breadcrumb">

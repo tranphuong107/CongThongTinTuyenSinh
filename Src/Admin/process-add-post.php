@@ -6,19 +6,19 @@
         // if(!empty($_POST['txt-title']) && !empty($_POST['txt-content']) && !empty($_POST['txt-userid'])
         // && !empty($_POST['txt-image'])&& !empty($_POST['txt-category'])){
         if (empty($_POST['txt-title'])) {
-            header("Location:add-post.php?error=Tiêu đề là bắt buộc!");
+            header("Location:add-post.php?error=Tiêu đề bài viết không được để trống!");
             exit();
         }else if(empty($_POST['txt-category'])){
-            header("Location:add-post.php?error=Danh mục là bắt buộc!");
+            header("Location:add-post.php?error=Danh mục bài viết chưa được chọn!");
             exit();
         }else if(empty($_POST['txt-userid'])){
-            header("Location:add-post.php?error=ID người tạo là bắt buộc!");
+            header("Location:add-post.php?error=ID người tạo không được để trống!");
             exit();
         }else if(empty($_POST['txt-image'])){
-            header("Location:add-post.php?error=Ảnh là bắt buộc!");
+            header("Location:add-post.php?error=Ảnh bài viết chưa được chọn!");
             exit();
         }else if(empty($_POST['txt-content'])){
-            header("Location:add-post.php?error=Nội dung là bắt buộc!");
+            header("Location:add-post.php?error=Nội dung bài viết không được để trống!");
             exit();
         }else{
             if(!is_numeric($_POST['txt-userid'])){
