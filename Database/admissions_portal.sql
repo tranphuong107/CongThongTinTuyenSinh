@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th3 22, 2022 lúc 04:44 AM
+-- Thời gian đã tạo: Th3 22, 2022 lúc 04:59 AM
 -- Phiên bản máy phục vụ: 10.4.21-MariaDB
 -- Phiên bản PHP: 8.0.10
 
@@ -42,8 +42,6 @@ CREATE TABLE `aspirations` (
 INSERT INTO `aspirations` (`AspID`, `Majors`, `Subject`, `Ordinal`, `CanID`) VALUES
 (1, 'CNTT', 'A01', '1', 2),
 (2, 'NNA', 'A01', '2', 2),
-(3, 'CNTT', 'A01', '1', 2),
-(4, 'NNA', 'A01', '2', 2),
 (5, 'CNTT', 'A01', '1', 3),
 (6, 'NNA', 'A01', '2', 3);
 
