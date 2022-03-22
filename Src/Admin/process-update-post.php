@@ -6,16 +6,16 @@
         {
             // if(!empty($_POST['txt-title']) && !empty($_POST['txt-content']) && !empty($_POST['txt-userid'])){//kiểm tra có nhập đủ tt k
             if (empty($_POST['txt-title'])) {
-                 header("Location:update-post.php?id=".$_GET['id']."&error=Tiêu đề là bắt buộc!");
+                 header("Location:update-post.php?id=".$_GET['id']."&error=Tiêu đề bài viết không được để trống!");
                 exit();
             }else if(empty($_POST['txt-content'])){
-                header("Location:update-post.php?id=".$_GET['id']."&error=Nội dung là bắt buộc!");
+                header("Location:update-post.php?id=".$_GET['id']."&error=Nội dung bài viết không được để trống!");
                 exit();
             }else if(empty($_POST['txt-category'])){
-                header("Location:update-post.php?id=".$_GET['id']."&error=Danh mục là bắt buộc!");
+                header("Location:update-post.php?id=".$_GET['id']."&error=Danh mục bài viết chưa được chọn!");
                 exit();
             }else if(empty($_POST['txt-userid'])){
-                header("Location:update-post.php?id=".$_GET['id']."&error=ID người sửa là bắt buộc!");
+                header("Location:update-post.php?id=".$_GET['id']."&error=ID người sửa không được để trống!");
                 exit();
             }else{
                 if(!is_numeric($_POST['txt-userid'])){

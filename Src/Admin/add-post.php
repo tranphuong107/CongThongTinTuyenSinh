@@ -44,7 +44,10 @@
                         <div class="row ">
                             <div class="mb-3 col-7 ">
                                 <label for="" class="form-label">Tiêu đề:</label>
-                                <input type="text" class="form-control border border-dark me-4" style="width:87%;" id="" name ="txt-title" >
+                                <input type="text" class="form-control border border-dark me-4" style="width:87%;" id="" name ="txt-title" 
+                                <?php if (isset($_GET['title'])) { ?>
+                                    value = "<?php echo $_GET['title'];?>"
+                                <?php } ?> >
                             </div>
 
                             <div class="col-5">

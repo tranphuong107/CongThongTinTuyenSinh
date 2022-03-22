@@ -22,7 +22,7 @@
         <li class="breadcrumb-item active" aria-current="page"> <a style="text-decoration: none; color:darkgray" href="register.php">ĐĂNG KÍ XÉT TUYỂN</a></li>
     </ol>
     </nav>
-    <div class = "bg-white p-5 my-1">
+    <div class = "bg-white p-5 my-1" style ="height:500px;">
         <h1 class = "fs-primary"><center>ĐĂNG KÍ XÉT TUYỂN HỌC BẠ THÀNH CÔNG!</center></h1>
         <H2><CEnter>Chúng tôi sẽ gửi email thông báo kết quả xét tuyển. Mong bạn sẽ chú ý hòm thư!</CEnter></H2>
     </div>

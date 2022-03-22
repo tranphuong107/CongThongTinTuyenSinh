@@ -23,7 +23,7 @@
     </ol>
     </nav>
     <div class = "bg-white p-5 my-1">
-        <h1 class = "fs-primary"><center>Oops! Có lỗi gì đó xảy ra</center></h1>
+        <h1 class = "fs-primary" style ="height:500px;" ><center>Oops! Có lỗi gì đó xảy ra</center></h1>
         <H2><CEnter>Vui lòng thử lại!</CEnter></H2>
     </div>
 
