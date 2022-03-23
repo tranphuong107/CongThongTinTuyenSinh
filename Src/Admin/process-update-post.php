@@ -4,25 +4,7 @@
 <?php
         if(isset($_POST['btnupdate']))
         {
-            // if(!empty($_POST['txt-title']) && !empty($_POST['txt-content']) && !empty($_POST['txt-userid'])){//kiểm tra có nhập đủ tt k
-            if (empty($_POST['txt-title'])) {
-                 header("Location:update-post.php?id=".$_GET['id']."&error=Tiêu đề bài viết không được để trống!");
-                exit();
-            }else if(empty($_POST['txt-content'])){
-                header("Location:update-post.php?id=".$_GET['id']."&error=Nội dung bài viết không được để trống!");
-                exit();
-            }else if(empty($_POST['txt-category'])){
-                header("Location:update-post.php?id=".$_GET['id']."&error=Danh mục bài viết chưa được chọn!");
-                exit();
-            }else if(empty($_POST['txt-userid'])){
-                header("Location:update-post.php?id=".$_GET['id']."&error=ID người sửa không được để trống!");
-                exit();
-            }else{
-                if(!is_numeric($_POST['txt-userid'])){
-                    header("Location:update-post.php?id=".$_GET['id']."&error=ID người sửa phải là số!");
-                    exit();
-                }else 
-                    $userid = $_POST['txt-userid'];
+                    $userid = $_POST['txt_userid'];
                     $kiemtra = "SELECT * from users where UserID = '$userid'";
                     $result0 = mysqli_query($conn,$kiemtra);
                     if(!mysqli_fetch_array( $result0)){
@@ -30,14 +12,14 @@
                     exit();
                 }else{
                     $post_id = $_GET['id'];
-                    $category = $_POST['txt-category'];
-                    $title = $_POST['txt-title'];
-                    $content = $_POST['txt-content'];
+                    $category = $_POST['txt_category'];
+                    $title = $_POST['txt_title'];
+                    $content = $_POST['txt_content'];
                     date_default_timezone_set('Asia/Ho_Chi_Minh');
                     $CreatedAt = date('Y/m/d H:i:s');
-                    $image =$_POST['txt-image']; 
-                    $user_id = $_POST['txt-userid'];
-                    if($_POST['txt-image']!=''){//ktra có thay đổi ảnh k
+                    $image =$_POST['txt_image']; 
+                    $user_id = $_POST['txt_userid'];
+                    if($_POST['txt_image']!=''){//ktra có thay đổi ảnh k
                         //chỉnh sửa thông tin
                         $sql1 = "UPDATE posts SET 
                             Category =  '$category', Title = '$title', Content ='$content', 
@@ -72,7 +54,7 @@
                         }
                     }
                 }
-            }
+            // }
             // }else{
             //     echo '<script>';
             //     echo 'alert ("Vui lòng nhập đủ dữ liệu!");';

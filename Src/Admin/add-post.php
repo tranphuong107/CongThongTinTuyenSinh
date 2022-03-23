@@ -40,25 +40,24 @@
                     <?php if (isset($_GET['error'])) { ?>
                         <h6 class="text-center" style="color:red;"><?php echo $_GET['error']; ?></h6>
                     <?php } ?>
+                        <h6 class="text-center" id ="baoloi" style="color:red;"></h6>
+                 
                     <form action ="process-add-post.php" method ="post" class=" mx-3 ps-5 rounded-3 " style =" border-radius: 30px">
                         <div class="row ">
                             <div class="mb-3 col-7 ">
                                 <label for="" class="form-label">Tiêu đề:</label>
-                                <input type="text" class="form-control border border-dark me-4" style="width:87%;" id="" name ="txt-title" 
-                                <?php if (isset($_GET['title'])) { ?>
-                                    value = "<?php echo $_GET['title'];?>"
-                                <?php } ?> >
+                                <input type="text" class="form-control border border-dark me-4" style="width:87%;" id="" name ="txt_title" required>
                             </div>
 
                             <div class="col-5">
                                 <div  class = " text-begin pb-2 ">Hình ảnh: </div> 
-                                <input type="file" name="txt-image" id ="imageFile" value="Chọn ảnh" onchange="chooseFile(this)" accept= "image/gif, image/jpeg, image/png"/> 
+                                <input type="file" name="txt_image"  required id ="imageFile" value="Chọn ảnh" onchange="chooseFile(this)" accept= "image/gif, image/jpeg, image/png"/> 
                             </div>
                         </div>
                         <div class="row py-1">
                             <div class="mb-3 col-7 pt-2 ">
                                 <label class=" me-4 "for="cars">Danh mục: </label>
-                                <select class ="p-2 border border-dark rounded-3 " name="txt-category" id="category">
+                                <select class ="p-2 border border-dark rounded-3 " name="txt_category" required id="category">
                                 <option value="" selected disabled hidden>Chọn danh mục</option>
                                 <option value="Giới thiệu">Giới thiệu</option>
                                 <option value="Thông tin tuyển sinh">Thông tin tuyển sinh</option>
@@ -67,7 +66,7 @@
                                 <div class="mb-3 col-7 mt-3">
                                 <div class="mb-3 py-2">
                                     <label for="" class="form-label">ID Người tạo:</label>
-                                    <input type="text" class="form-control border border-dark" style="width:87%;" id="" name ="txt-userid">
+                                    <input type="text" class="form-control border border-dark" style="width:87%;" id="" name ="txt_userid" required>
                                 </div>
                             </div>
                             </div>
@@ -81,7 +80,7 @@
                             <div class="mb-3 ">
                                 <div class="mb-3 noidung ms-4">
                                     <label for="" class="form-label" style="margin-left:-20px;">Nội dung:</label>
-                                    <textarea type="" class="form-control border border-dark " style="height:150px; width:70%;" id="summernote" name ="txt-content" ></textarea>
+                                    <textarea type="" class="form-control border border-dark " style="height:150px; width:70%;" id="summernote" name ="txt_content"required ></textarea>
                                 
                                 </div>
                             </div>
@@ -97,7 +96,8 @@
                             </div>
                         </div>
                     </form>
-        </div>
+
+        </div>  
     </div>
    <!-- Optional JavaScript; choose one of the two! -->
 

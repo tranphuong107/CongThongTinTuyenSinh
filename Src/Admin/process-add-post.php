@@ -2,41 +2,18 @@
     include '../config.php';
     if(isset($_POST['btnadd']))
     {
-        
-        // if(!empty($_POST['txt-title']) && !empty($_POST['txt-content']) && !empty($_POST['txt-userid'])
-        // && !empty($_POST['txt-image'])&& !empty($_POST['txt-category'])){
-        if (empty($_POST['txt-title'])) {
-            header("Location:add-post.php?error=Tiêu đề bài viết không được để trống!");
-            exit();
-        }else if(empty($_POST['txt-category'])){
-            header("Location:add-post.php?error=Danh mục bài viết chưa được chọn!");
-            exit();
-        }else if(empty($_POST['txt-userid'])){
-            header("Location:add-post.php?error=ID người tạo không được để trống!");
-            exit();
-        }else if(empty($_POST['txt-image'])){
-            header("Location:add-post.php?error=Ảnh bài viết chưa được chọn!");
-            exit();
-        }else if(empty($_POST['txt-content'])){
-            header("Location:add-post.php?error=Nội dung bài viết không được để trống!");
-            exit();
-        }else{
-            if(!is_numeric($_POST['txt-userid'])){
-                header("Location:add-post.php?error=ID người tạo phải là số!");
-                exit();   
-            }else 
-                $userid = $_POST['txt-userid'];
+                $userid = $_POST['txt_userid'];
                 $kiemtra = "SELECT * from users where UserID = '$userid'";
                 $result0 = mysqli_query($conn,$kiemtra);
                 if(!mysqli_fetch_array( $result0)){
                 header("Location:add-post.php?error=ID người tạo không tồn tại!");
                 exit();
             }else{
-                $category =$_POST['txt-category'];
-                $title =$_POST['txt-title'];
-                $content = $_POST['txt-content'];
-                $image =$_POST['txt-image'];
-                $userID =$_POST['txt-userid'];
+                $category =$_POST['txt_category'];
+                $title =$_POST['txt_title'];
+                $content = $_POST['txt_content'];
+                $image =$_POST['txt_image'];
+                $userID =$_POST['txt_userid'];
                 $sql = "INSERT INTO posts(Category, Title, Content , Image, UserID)
                         VALUES ('$category','$title','$content','$image','$userID')";
                 //bước 3: result là số bản ghi chèn thành công
@@ -54,7 +31,7 @@
                 //bước 4
                 mysqli_close($conn);
             }
-        }
+        // }
         // else{
         //         echo '<script>';
         //         echo 'alert ("Vui lòng nhập đủ dữ liệu!");';

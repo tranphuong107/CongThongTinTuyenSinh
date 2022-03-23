@@ -47,14 +47,15 @@
                     <?php if (isset($_GET['error'])) { ?>
                         <h6 class="text-center" style="color:red;"><?php echo $_GET['error']; ?></h6>
                     <?php } ?>
-                    <form action ="process-update-post.php?id=<?php echo $_GET['id']?>"  method ="post" class=" mx-3 ps-5 rounded-3 " style =" border-radius: 30px">
+                        <h6 class="text-center" id ="baoloi" style="color:red;"></h6>
+                    <form action ="process-update-post.php?id=<?php echo $_GET['id']?>"  method ="post"  class=" mx-3 ps-5 rounded-3 " style =" border-radius: 30px">
                         <div class="row ">
                             <div class=" col-7 ">
                                 <label for="" class="form-label" style="position: relative;">ID bài viết:</label>
-                                <input type="text" class="form-control border border-dark me-4" disabled style="width:9%;margin-left:15%;bottom:37px; position: relative;" id="" name ="txt-title" value = "<?php echo $row['PostID'];?>">
+                                <input type="text" class="form-control border border-dark me-4" disabled style="width:9%;margin-left:15%;bottom:37px; position: relative;" id="" name ="txt_postid" value = "<?php echo $row['PostID'];?>">
                                 <div class="mt-4 col-7 ">
                                     <label for="" class="form-label">Tiêu đề:</label>
-                                    <input type="text" class="form-control border border-dark me-4" style="width:525px;" id="" name ="txt-title" value = "<?php echo $row['Title'];?>">
+                                    <input type="text" class="form-control border border-dark me-4" style="width:525px;" id="" name ="txt_title" required value = "<?php echo $row['Title'];?>">
                                 </div>
                             </div>
                             <div class="col-5 mb-3">
@@ -64,7 +65,7 @@
                                
                                 <div class="mb-5 col-7  ">
                                     <label class=" me-4 "for="cars">Danh mục: </label>
-                                    <select class ="p-2 border border-dark rounded-3 " name="txt-category" id="category">          
+                                    <select class ="p-2 border border-dark rounded-3 " name="txt_category" required id="category">          
                                     <option value="<?php echo $row['Category'];?>" selected  hidden><?php echo $row['Category'];?></option>
                                     <option value="Giới thiệu">Giới thiệu</option>
                                     <option value="Thông tin tuyển sinh">Thông tin tuyển sinh</option>
@@ -72,13 +73,13 @@
                                     </select>
                                     <div class="mb-3 py-2 mt-5">
                                     <label for="" class="form-label">ID Người sửa:</label>
-                                    <input type="text" class="form-control border border-dark" style="width:47%;" id="" name ="txt-userid" value ="<?php echo $row['UserID'];?>">
+                                    <input type="text" class="form-control border border-dark" style="width:47%;" id="" name ="txt_userid" required value ="<?php echo $row['UserID'];?>">
                                 </div>
                                 </div>
                                 <div class="mb-3 col-5">
                                     <div class="col-5 mb-3">
                                         <div  class = " text-begin pb-2 ">Hình ảnh thay thế: </div> 
-                                        <input type="file" name="txt-image" id ="imageFile" value="Chọn ảnh" onchange="chooseFile(this)" accept= "image/gif, image/jpeg, image/png"/> 
+                                        <input type="file" name="txt_image" id ="imageFile" value="Chọn ảnh" onchange="chooseFile(this)" accept= "image/gif, image/jpeg, image/png"/> 
                                     </div>
                                     <div class="col-5">
                                     <img src="" alt="" id="image" style = "width:200px; height:150px;">
@@ -91,7 +92,7 @@
                             <div class=" ">
                                 <div class="mb-3 noidung ms-4">
                                     <label for="" class="form-label" style="margin-left:-20px;">Nội dung:</label>
-                                    <textarea type="" class="form-control border ms-5 border-dark ps-3" style="height:150px; width:100%;" id="summernote" name ="txt-content" ><?php echo $row['Content'];?></textarea>
+                                    <textarea type="" class="form-control border ms-5 border-dark ps-3" style="height:150px; width:100%;" id="summernote" name ="txt_content"  required><?php echo $row['Content'];?></textarea>
                                 
                                 </div>
                             </div>
